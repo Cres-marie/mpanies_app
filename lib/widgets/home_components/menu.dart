@@ -76,7 +76,12 @@ class MobMenu extends StatelessWidget {
             height: 20,
           ),
           SideMenu(
-            press: () {},
+            press: () {
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context)=> SkinCare())
+              );
+            },
             title: "Skin Care",
           ),
           SizedBox(

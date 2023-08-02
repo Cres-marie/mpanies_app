@@ -13,8 +13,8 @@ class _NewArrivalState extends State<NewArrival> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin:EdgeInsets.only(top: 20),
-      padding: EdgeInsets.all(70),
+      margin:EdgeInsets.only(right: 20, top: 50, left: 20, bottom: 70),
+      //padding: EdgeInsets.all(70),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -50,7 +50,7 @@ class ProductCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      //height: 100,
       child: Card(
         // Add any desired styling to the card
         elevation: 2.0,

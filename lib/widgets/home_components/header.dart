@@ -27,7 +27,7 @@ class Header extends StatelessWidget {
                         Scaffold.of(context).openDrawer();
                       },
                       icon: Icon(Icons.menu))),
-            Image.asset('assets/images/mpanies.png', height: 180, width: 300,),
+            Image.asset('assets/images/mpanies.png', height: 150, width: 250,),
             
             // Text(
             //   "Foodie",
@@ -73,8 +73,8 @@ class Header extends StatelessWidget {
                   )
                 : Container(
                     padding: EdgeInsets.only(left: 10, right: 10),
-                    height: 50,
-                    width: 100,
+                    height: 40,
+                    width: 200,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       border: Border.all(color: Colors.grey.withOpacity(0.3)),
@@ -88,7 +88,7 @@ class Header extends StatelessWidget {
               onPressed: (){}, 
               icon: Icon(Icons.shopping_bag_outlined,color: Colors.black,size: 32,)
             ),
-
+            
             IconButton(
               onPressed: (){}, 
               icon: Icon(Icons.person, color: Colors.black,size: 32),
@@ -102,6 +102,8 @@ class Header extends StatelessWidget {
             color: Colors.black,
             child: WebHeaderMenu(),
           ),
+      
+
       ],
     );
 

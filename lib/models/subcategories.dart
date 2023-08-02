@@ -4,19 +4,22 @@ class SubCategory {
   SubCategory({required this. name});
 }
 
-// final List<SubCategory> categories = [
-//   SubCategory(
-//     name : 'cleanser'
-//   ),
-
-//   SubCategory(
-//     name : 'cleanser'
-//   )
-
-// ];
 
 final List<SubCategory> categories = [
-  SubCategory(name: 'cleanser'),
-  SubCategory(name: 'toner'),
+  SubCategory(
+    name: 'Moisteurizers'
+  ),
+  SubCategory(
+    name: 'cleansers'
+  ),
+  SubCategory(
+    name: 'Masks'
+  ),
+  SubCategory(
+    name: 'Lip Balms'
+  ),
+  SubCategory(
+    name: 'Sunscreen'
+  ),
   // Add more subcategories here
 ];

@@ -39,10 +39,10 @@ class BannerSection extends StatelessWidget {
                       "assets/images/slider-2.png",
                       fit: BoxFit.cover,
                     ),
-                    Image.asset(
-                      "assets/images/slider-5.png",
-                      fit: BoxFit.cover,
-                    ),
+                    // Image.asset(
+                    //   "assets/images/slider-5.png", height: 30, width: 20,
+                    //   fit: BoxFit.cover,
+                    // ),
                     // Add more images to create a carousel effect
                   ],
                   options: CarouselOptions(
@@ -86,10 +86,10 @@ class _MobBannerState extends State<MobBanner> {
                 "assets/images/slider-2.png",
                 fit: BoxFit.cover,
               ),
-              Image.asset(
-                "assets/images/slider-5.png",
-                fit: BoxFit.cover,
-              ),
+              // Image.asset(
+              //   "assets/images/slider-5.png",
+              //   fit: BoxFit.cover,
+              // ),
               // Add more images to create a carousel effect
             ],
             options: CarouselOptions(

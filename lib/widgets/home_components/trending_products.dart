@@ -15,7 +15,7 @@ class _TrendingProductsState extends State<TrendingProducts> {
   Widget build(BuildContext context) {
     return Container(
       //margin:EdgeInsets.only(top: 20),
-      padding: EdgeInsets.only(right: 70, bottom: 70, left: 70),
+      padding: EdgeInsets.only(right: 20, bottom: 70, left: 20),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -60,27 +60,60 @@ class ProductCard extends StatelessWidget {
           width: 300,// Adjust the width as needed
           padding: EdgeInsets.all(20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              // Product image
-              Image.asset(
-                product.imageUrl,
-                  height: 150,
-                  width: 150,
-                fit: BoxFit.cover,
-              ),
-              SizedBox(height: 8),
-              // Product description
-              Text(
-                product.description,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-              // Product price
-              Text(
-                product.price,
-                style: TextStyle(fontSize: 14, color: Colors.grey),
-              ),
-            ],
+              Stack(
+                children: [
+                  // Product image
+                  Image.asset(
+                    product.imageUrl,
+                    height: 150,
+                    width: 150,
+                    fit: BoxFit.cover,
+                  ),
+                  Positioned(
+                    top: 8,
+                    right: 8,
+                    child:GestureDetector(
+                      onTap: () {},
+                      child: Icon(Icons.favorite, color: Colors.red, size: 20,),
+                    ),
+                      
+                  ),
+                  
+                ]
+              ),                      
+              Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // Product description
+                Text(
+                  product.description,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+                // Product price
+                Text(
+                  product.price,
+                  style: TextStyle(fontSize: 14, color: Colors.grey),
+                ),
+                SizedBox(height: 8),
+                Container(
+                  height: 40,
+                  width: 140,
+                  child: ElevatedButton(
+                    onPressed: (){},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black, // Set background color to black
+                //color: Colors.white, // Set text color to white
+                      elevation: 4, // Set the elevation shadow
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
+                    ),
+                
+                    child: Text('Add To Bag',style: TextStyle(fontSize: 16),),
+                  ),
+                )
+              ],
+            ),
+            ]
           ),
         ),
       ),
