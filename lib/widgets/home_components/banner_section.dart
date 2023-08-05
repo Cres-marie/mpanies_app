@@ -4,108 +4,155 @@ import 'package:flutter/material.dart';
 
 import '../../utils/constants.dart';
 
-
-class BannerSection extends StatelessWidget {
-  const BannerSection({
-    Key? key,
-  }) : super(key: key);
+class webBanner extends StatefulWidget {
+  const webBanner({super.key});
 
   @override
+  State<webBanner> createState() => _webBannerState();
+}
+
+class _webBannerState extends State<webBanner> {
+  @override
   Widget build(BuildContext context) {
-    //backgroundColor: Colors.black;
-    return Row(
-      children: [
-        Expanded(
-          flex: 3,
-          child: AboutSection(),
-        ),
-        SizedBox(
-          width: 20,
-        ),
-        Expanded(
-          flex: 2,
-          child: Column(
-            children: [
-              Container(
-                color: k2SecondaryColor,
-                height: 300,
-                child: CarouselSlider(
-                  items: [
-                    Image.asset(
-                      "assets/images/slider-1.png",
+    return Container(
+      //color: Colors.,
+      child: CarouselSlider(
+        items: [
+          Container(
+            child: Row(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(30),
+                  margin: EdgeInsets.only(left: 90),
+                  child: Image.asset(
+                    "assets/images/slider-1.png", width: 300,               
                       fit: BoxFit.cover,
-                    ),
-                    Image.asset(
-                      "assets/images/slider-2.png",
-                      fit: BoxFit.cover,
-                    ),
-                    // Image.asset(
-                    //   "assets/images/slider-5.png", height: 30, width: 20,
-                    //   fit: BoxFit.cover,
-                    // ),
-                    // Add more images to create a carousel effect
-                  ],
-                  options: CarouselOptions(
-                    height: 300,
-                    autoPlay: true,
-                    aspectRatio: 1.0,
-                    enlargeCenterPage: true,
                   ),
+                ),                                
+                SizedBox(width: 80,),
+                Flexible(                  
+                  child: Container( 
+                    padding:EdgeInsets.only(right:120) ,
+                    child: AboutSection()
+                  )
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
-        )
-      ],
+
+          Container(
+            child: Row(
+              children: [                      
+                //SizedBox(width: 20,),
+                Flexible(                  
+                  child: Container(
+                    padding: EdgeInsets.only(left: 90),
+                    child: AboutSection()
+                  )
+                ),
+                SizedBox(width: 80,),
+                Container(
+                  padding: EdgeInsets.only(right: 90),
+                  //margin: EdgeInsets.only(left: 60),
+                  child: Image.asset(
+                    "assets/images/slider-2.png", width: 400,                
+                      fit: BoxFit.cover,
+                  ),
+                ),          
+              ],
+            ),
+          )
+        ], 
+        options: CarouselOptions(
+          height: 500,
+          autoPlay: true,
+          aspectRatio: 1.0,
+          enlargeCenterPage: true,
+          viewportFraction: 1.0,
+        ), 
+      ),
     );
   }
 }
 
+
 class MobBanner extends StatefulWidget {
-  const MobBanner({Key? key}) : super(key: key);
+  const MobBanner({super.key});
 
   @override
-  _MobBannerState createState() => _MobBannerState();
+  State<MobBanner> createState() => _MobBannerState();
 }
 
 class _MobBannerState extends State<MobBanner> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          color: k2SecondaryColor,
-          height: 300,
-          child: CarouselSlider(
-            items: [
-              Image.asset(
-                "assets/images/slider-1.png",                
-                fit: BoxFit.cover,
-              ),
-              Image.asset(
-                "assets/images/slider-2.png",
-                fit: BoxFit.cover,
-              ),
-              // Image.asset(
-              //   "assets/images/slider-5.png",
-              //   fit: BoxFit.cover,
-              // ),
-              // Add more images to create a carousel effect
-            ],
-            options: CarouselOptions(
-              height: 300,
-              autoPlay: true,
-              aspectRatio: 1.0,
-              enlargeCenterPage: true,
+    return Container(
+      child: CarouselSlider(
+        items: [
+          Container(
+            //height: 100,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  //height:250,
+                  //padding: EdgeInsets.all(30),
+                  //margin: EdgeInsets.only(left: 90),
+                  child: Image.asset(
+                    "assets/images/slider-2.png", width: 250, height: 200,          
+                      fit: BoxFit.cover,
+                  ),
+                ),                                
+                //SizedBox(height: 10,),
+                                 
+                  //Container( 
+                    //padding:EdgeInsets.all(20) ,
+                    //child: AboutSection()
+                  //)
+                
+              ],
             ),
           ),
-        ),
-        
-        AboutSection(),
-      ],
+
+          Container(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [                      
+                //SizedBox(width: 20,),
+                Container(
+                  //padding: EdgeInsets.only(right: 90),
+                  //margin: EdgeInsets.only(left: 60),
+                  child: Image.asset(
+                    "assets/images/slider-2.png", width: 250, height: 200,                
+                      fit: BoxFit.cover,
+                  ),
+                ),
+                //Flexible(                  
+                  //child: Container(
+                    //padding: EdgeInsets.only(left: 90),
+                    //child: AboutSection()
+                  //)
+                //),
+                //SizedBox(height: 10,),         
+              ],
+            ),
+          )
+        ], 
+        options: CarouselOptions(
+          height: 250,
+          autoPlay: true,
+          aspectRatio: 1.0,
+          enlargeCenterPage: true,
+          viewportFraction: 1.0
+        ), 
+      ),
     );
   }
 }
+
+
 
 class AboutSection extends StatelessWidget {
   const AboutSection({
@@ -115,12 +162,13 @@ class AboutSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(70),
-      constraints: BoxConstraints(maxWidth: kMaxWidth),
-      width: double.infinity,
+      //margin: EdgeInsets.only(right: 100,),
+      //padding: EdgeInsets.all(80),
+      //constraints: BoxConstraints(maxWidth: kMaxWidth),
+      //width: double.infinity,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        // ignore: prefer_const_literals_to_create_immutables
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // ignore: prefer_const_constructors
           //it will adjust its size according to screeen
@@ -142,32 +190,18 @@ class AboutSection extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
-          Text(
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-            textAlign: TextAlign.center,
+          AutoSizeText(
+            "Unveiling Hidden Elegance: Explore and Unearth Beauty's Best-Kept Secrets with Mpanies Exquisite Cosmetics Collection - Your Pathway to Radiant Transformation Awaits!",
+             maxLines: 6,
             style: TextStyle(
               color: Colors.black54,
+              fontSize: 14,
+              height: 1.4, wordSpacing: 2
             ),
           ),
           SizedBox(
             height: 20,
           ),
-          
-          //SizedBox(height: 40,),    
-          Container(
-            height: 60,
-            width: 140,
-            child: ElevatedButton(
-              onPressed: (){},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black, // Set background color to black
-              //color: Colors.white, // Set text color to white
-                elevation: 4, // Set the elevation shadow
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-              ),
-              child: Text('View More',style: TextStyle(fontSize: 16),),
-            ),
-          )
         ],
       ),
     );

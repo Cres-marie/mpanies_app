@@ -1,0 +1,32 @@
+class Category {
+  final String name;
+
+  Category({required this. name});
+}
+
+
+final List<Category> brand = [
+
+  Category(
+    name: 'New'
+  ),
+  Category(
+    name: 'Trending'
+  ),
+  Category(
+    name: 'Skin Care'
+  ),
+  Category(
+    name: 'Hair'
+  ),
+  Category(
+    name: 'Body Care'
+  ),
+  Category(
+    name: 'Make Up'
+  ),
+  Category(
+    name: 'Nails'
+  ),
+  // Add more subcategories here
+];

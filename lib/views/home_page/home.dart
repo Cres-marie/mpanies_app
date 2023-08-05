@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/utils/constants.dart';
-import 'package:mpanies_app/widgets/home_components/footer.dart';
+import 'package:mpanies_app/views/home_page/widgets/footer.dart';
 //import 'package:mpanies_app/widgets/newarrivals.dart';
-import 'package:mpanies_app/widgets/home_components/newsletter.dart';
-import 'package:mpanies_app/widgets/home_components/trending_products.dart';
+import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
+import 'package:mpanies_app/views/home_page/widgets/searchbar.dart';
+import 'package:mpanies_app/views/home_page/widgets/trending_products.dart';
+import 'package:mpanies_app/views/product_page/widgets/products_container.dart';
 //import 'package:mpanies_app/widgets/slider.dart';
 
-import '../models/new.dart';
-import '../models/responsive.dart';
-import '../widgets/home_components/banner_section.dart';
-import '../widgets/home_components/body_container.dart';
-import '../widgets/home_components/header_container.dart';
-import '../widgets/home_components/menu.dart';
-import '../widgets/home_components/newArrival.dart';
+import '../../models/new.dart';
+import '../../models/responsive.dart';
+import '../../widgets/home_components/banner_section.dart';
+import 'widgets/body_container.dart';
+import 'widgets/header_container.dart';
+import 'widgets/menu.dart';
+import 'widgets/newArrival.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -39,7 +41,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
-            MobMenu()
+            MobNavMenu()
           ],
         ),
       ),
@@ -49,6 +51,10 @@ class _HomeState extends State<Home> {
           children: [
             //header
             HeaderContainer(),
+            
+            
+            //DrawerWidget(),
+            //RoundSearchIcon(),
             Expanded(
               child: SingleChildScrollView(
                 child: SafeArea(
@@ -57,13 +63,14 @@ class _HomeState extends State<Home> {
                     children: [
                       
                   
-                      Responsive.isDesktop(context) ? BannerSection() : MobBanner(),
+                      Responsive.isDesktop(context) ? webBanner() : MobBanner(),
                       //body
                       BodyContainer(),
                       NewArrival(),
                       TrendingProducts(),
                       NewsLetter(),
-                      Footer()
+                      Footer(),
+                      
                       
                       //footer
                       //SizedBox(

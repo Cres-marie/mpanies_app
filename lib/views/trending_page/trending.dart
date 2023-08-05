@@ -1,22 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:mpanies_app/widgets/filters.dart';
-import 'package:mpanies_app/widgets/home_components/footer.dart';
-import 'package:mpanies_app/widgets/home_components/newsletter.dart';
-import 'package:mpanies_app/widgets/sidemenu.dart';
 
-import '../models/responsive.dart';
-import '../utils/constants.dart';
-import '../widgets/home_components/header_container.dart';
-import '../widgets/home_components/menu.dart';
+import '../../models/responsive.dart';
+import '../../utils/constants.dart';
+import '../home_page/widgets/footer.dart';
+import '../home_page/widgets/header_container.dart';
+import '../home_page/widgets/menu.dart';
+import '../home_page/widgets/newsletter.dart';
+import '../skincare_page/widgets/sidemenu.dart';
 
-class SkinCare extends StatefulWidget {
-  const SkinCare({super.key});
+class TrendingProduct extends StatefulWidget {
+  const TrendingProduct({super.key});
 
   @override
-  State<SkinCare> createState() => _SkinCareState();
+  State<TrendingProduct> createState() => _TrendingProductState();
 }
 
-class _SkinCareState extends State<SkinCare> {
+class _TrendingProductState extends State<TrendingProduct> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +32,7 @@ class _SkinCareState extends State<SkinCare> {
                 ),
               ),
             ),
-            MobMenu()
+            MobNavMenu()
           ],
         ),
       ),
@@ -74,7 +73,6 @@ class _SkinCareState extends State<SkinCare> {
           ],
         ),
       ),
-              
 
     );
   }

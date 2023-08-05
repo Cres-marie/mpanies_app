@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:mpanies_app/views/home.dart';
+import 'package:mpanies_app/views/home_page/home.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;

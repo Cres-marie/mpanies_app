@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/constants.dart';
+import '../../../utils/constants.dart';
 
 class NewsLetter extends StatefulWidget {
   const NewsLetter({super.key});
@@ -19,7 +19,7 @@ class _NewsLetterState extends State<NewsLetter> {
         children: [
           Container(
             padding: bpadding,
-            color: kTertiaryColor,
+            color: kTertiaryPeach,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height/2.0,
             child: Column(

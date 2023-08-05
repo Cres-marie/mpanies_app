@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/views/skincare_page/widgets/filters.dart';
+import 'package:mpanies_app/views/home_page/widgets/footer.dart';
+import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
+import 'package:mpanies_app/views/skincare_page/widgets/sidemenu.dart';
 
-import '../utils/constants.dart';
-import '../widgets/home_components/header_container.dart';
-import '../widgets/home_components/menu.dart';
+import '../../models/responsive.dart';
+import '../../utils/constants.dart';
+import '../home_page/widgets/header_container.dart';
+import '../home_page/widgets/menu.dart';
 
-class Nails extends StatefulWidget {
-  const Nails({super.key});
+class SkinCare extends StatefulWidget {
+  const SkinCare({super.key});
 
   @override
-  State<Nails> createState() => _NailsState();
+  State<SkinCare> createState() => _SkinCareState();
 }
 
-class _NailsState extends State<Nails> {
+class _SkinCareState extends State<SkinCare> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +33,7 @@ class _NailsState extends State<Nails> {
                 ),
               ),
             ),
-            MobMenu()
+            MobNavMenu()
           ],
         ),
       ),
@@ -44,9 +49,13 @@ class _NailsState extends State<Nails> {
                   child: Column(
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      
+                      //WebSideView(),
+                      Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
+                      NewsLetter(),
+                      Footer()
+                      //CheckboxExample()
                   
-                      //Responsive.isDesktop(context) ? BannerSection() : MobBanner(),
+                      //Responsive.isDesktop(context) ? SideMenuView() : MobSideView(),
                       //body
                       //BodyContainer(),
                       

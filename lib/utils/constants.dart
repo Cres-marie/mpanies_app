@@ -23,12 +23,12 @@ const sideheadings = TextStyle(
 
 const kMaxWidth = 1232.0;
 const kPadding = 20.0;
-const kPrimaryColor = Color.fromARGB(255, 156, 221, 241); //primary color of our website
-const kSecondaryColor = Color(0xFFFF69B4); //secondary colors
-const k2SecondaryColor = Color(0xFFFFD700);
-const kTertiaryColor = Color(0xFFFFDAB9); //tertiary colors
+const kPrimaryColor = Color.fromARGB(255, 228, 229, 230); //primary color of our website
+const kSecondaryColorPink = Color(0xFFFF69B4); //secondary colors
+const k2SecondaryGold = Color(0xFFFFD700);
+const kTertiaryPeach = Color(0xFFFFDAB9); //tertiary colors
 const k2TertiaryColor = Color(0xFFD3D3D3);
-const k3TertiaryColor = Color(0xFFFFC0CB);
+const k3TertiaryPale = Color(0xFFFFC0CB);
 
 const fheadings =
       TextStyle(color: Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold);
