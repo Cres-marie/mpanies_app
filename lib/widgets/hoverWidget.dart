@@ -82,3 +82,49 @@ class _HoverTextState extends State<HoverText> {
     );
   }
 }
+
+
+class HoverSocialIconButton extends StatefulWidget {
+  final IconData icon;
+  final VoidCallback onPressed;
+  final double size;
+  final Color color;
+  final Color hoverColor;
+
+  HoverSocialIconButton({
+    required this.icon,
+    required this.onPressed,
+    required this.size,
+    required this.color,
+    required this.hoverColor,
+  });
+
+  @override
+  State<HoverSocialIconButton> createState() => _HoverSocialIconButtonState();
+}
+
+class _HoverSocialIconButtonState extends State<HoverSocialIconButton> {
+  bool _isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          _isHovered = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          _isHovered = false;
+        });
+      },
+      child: IconButton(
+        icon: Icon(widget.icon),
+        onPressed: widget.onPressed,
+        iconSize: widget.size,
+        color: _isHovered ? widget.hoverColor : widget.color,
+      ),
+    );
+  }
+}
