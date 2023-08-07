@@ -42,6 +42,7 @@ dependencies:
   range_slider_flutter: ^0.0.2
   flutter_rating_bar: ^4.0.1
   hoverover: ^0.1.1
+  responsive_builder: ^0.7.0
 
 dev_dependencies:
   flutter_test:

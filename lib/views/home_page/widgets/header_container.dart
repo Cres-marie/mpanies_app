@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../models/responsive.dart';
 import '../../../utils/constants.dart';
-import '../../../widgets/home_components/banner_section.dart';
+import 'banner_section.dart';
 import 'header.dart';
 
 class HeaderContainer extends StatefulWidget {

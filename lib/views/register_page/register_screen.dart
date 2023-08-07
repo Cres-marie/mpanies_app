@@ -18,6 +18,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
+      appBar: AppBar(
+        elevation: 0,
+        toolbarHeight: 80,
+        leadingWidth: 200,
+        backgroundColor: Colors.white,
+        leading: Container(
+          height: 150,
+          width: 180,
+          child: Transform.scale(
+            scale: 1.2,
+            child: Image.asset('assets/images/mpanies.png',))
+        ),
+      ),
+
       body: SingleChildScrollView(
         child: Center(
           child: Container(

@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-import '../../utils/constants.dart';
+import '../../../utils/constants.dart';
 
 class webBanner extends StatefulWidget {
   const webBanner({super.key});

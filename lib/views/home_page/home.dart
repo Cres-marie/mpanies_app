@@ -10,7 +10,7 @@ import 'package:mpanies_app/views/product_page/widgets/products_container.dart';
 
 import '../../models/new.dart';
 import '../../models/responsive.dart';
-import '../../widgets/home_components/banner_section.dart';
+import 'widgets/banner_section.dart';
 import 'widgets/body_container.dart';
 import 'widgets/header_container.dart';
 import 'widgets/menu.dart';

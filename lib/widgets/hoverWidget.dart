@@ -29,10 +29,35 @@ class _HoverIconState extends State<HoverIcon> {
       },
       child: InkWell(
         onTap: widget.onPressed,
-        child: Icon(
-          widget.iconData,
-          color: _isHovered ? kSecondaryColorPink : Colors.black,
-          size: _isHovered? 40.0 :  32.0
+        child: Stack(
+          children: [
+            Icon(
+            widget.iconData,
+            color: _isHovered ? kSecondaryColorPink : Colors.black,
+            size: _isHovered? 40.0 :  32.0
+            ),
+            if (_isHovered)
+              Positioned(
+                top: widget.size + 10,
+                left: 0,
+                child: PopupMenuButton<String>(
+                  itemBuilder: (BuildContext context) {
+                    return <PopupMenuEntry<String>>[
+                      PopupMenuItem<String>(
+                        value: 'item1',
+                        child: Text('Item 1'),
+                      ),
+                      PopupMenuItem<String>(
+                        value: 'item2',
+                        child: Text('Item 2'),
+                      ),
+                      // Add more items as needed
+                    ];
+                  },
+                )
+              )
+
+          ]
         )
       ),
     );

@@ -33,6 +33,8 @@ const k3TertiaryPale = Color(0xFFFFC0CB);
 const fheadings =
       TextStyle(color: Colors.white,fontSize: 24.0,fontWeight: FontWeight.bold);
 const fsubheadings = TextStyle(color: Colors.white,fontSize: 14.0);
+const ordersubheadings = TextStyle(color: Colors.black,fontSize: 14.0,fontWeight: FontWeight.bold);
+const headings = TextStyle(color: Colors.black,fontSize: 30.0);
 
 
 
