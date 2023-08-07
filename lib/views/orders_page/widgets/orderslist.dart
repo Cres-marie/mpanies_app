@@ -5,7 +5,7 @@ import 'package:mpanies_app/views/checkout_page/checkoutScreen.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
 
 import '../../../models/trending.dart';
-import '../../product_page/widgets/quantityCounter.dart';
+import '../../cart_page/widgets/quantityCounter.dart';
 
 class OrdersList extends StatefulWidget {
   const OrdersList({super.key});

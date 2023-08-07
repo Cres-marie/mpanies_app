@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mpanies_app/views/product_page/widgets/productOptions.dart';
+import 'package:mpanies_app/views/cart_page/widgets/productOptions.dart';
 
 import 'imageSlider.dart';
 

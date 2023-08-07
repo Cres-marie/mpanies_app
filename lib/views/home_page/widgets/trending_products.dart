@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/models/trending.dart';
 import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
-import 'package:mpanies_app/views/product_page/productPage.dart';
+import 'package:mpanies_app/views/cart_page/productPage.dart';
 
 import '../../../utils/constants.dart';
 

@@ -5,7 +5,7 @@ import 'package:mpanies_app/views/home_page/widgets/footer.dart';
 import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
 import 'package:mpanies_app/views/home_page/widgets/searchbar.dart';
 import 'package:mpanies_app/views/home_page/widgets/trending_products.dart';
-import 'package:mpanies_app/views/product_page/widgets/products_container.dart';
+import 'package:mpanies_app/views/cart_page/widgets/products_container.dart';
 //import 'package:mpanies_app/widgets/slider.dart';
 
 import '../../models/new.dart';

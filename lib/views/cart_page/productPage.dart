@@ -3,7 +3,7 @@ import 'package:mpanies_app/models/responsive.dart';
 import 'package:mpanies_app/views/home_page/widgets/footer.dart';
 import 'package:mpanies_app/views/home_page/widgets/menu.dart';
 import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
-import 'package:mpanies_app/views/product_page/widgets/products_container.dart';
+import 'package:mpanies_app/views/cart_page/widgets/products_container.dart';
 
 import '../../utils/constants.dart';
 import '../home_page/widgets/header_container.dart';
@@ -49,7 +49,7 @@ class _ProductPageState extends State<ProductPage> {
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       //WebSideView(),
-                      //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
+                      Responsive.isDesktop(context) ? ProductsContainer() : MobSideView(),
                       ProductsContainer(),
                       //NewsLetter(),
                       Footer()

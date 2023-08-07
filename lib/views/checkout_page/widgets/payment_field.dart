@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/views/checkout_page/widgets/dropdown.dart';
 
 class Paymentfield extends StatefulWidget {
   const Paymentfield({super.key});
@@ -8,6 +9,11 @@ class Paymentfield extends StatefulWidget {
 }
 
 class _PaymentfieldState extends State<Paymentfield> {
+
+  TextEditingController controller = new TextEditingController();
+
+  List<String> monthList = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
@@ -78,25 +84,36 @@ class _PaymentfieldState extends State<Paymentfield> {
 
           Text('*Expiry Date', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
           SizedBox(height: 10,),  
-          TextFormField(
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.all(16),
-              enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Colors.grey,
-                  //width: 1,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                width: 160,
+                decoration: BoxDecoration(
+                  color: Colors.white
                 ),
-                borderRadius: BorderRadius.circular(10),
+                child: MonthDropdownField(
+                  months: ['01', '02', '03', '04','05', '06', '07', '08','09', '10', '11', '12'],
+                  selectedMonth: null, 
+                  onChanged: (String? month) {},
+                  labelText: 'Select Month',
+                )
               ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: const BorderSide(
-                  color: Colors.black,
-                  //width: 3,
+              
+              Container(
+                width: 160,
+                decoration: BoxDecoration(
+                  color: Colors.white
                 ),
-                borderRadius: BorderRadius.circular(10),
+                child: MonthDropdownField(
+                  months: ['22', '23', '24', '25','26', '27', '28', '29','30', '31', '32', '33'],
+                  selectedMonth: null, 
+                  onChanged: (String? month) {},
+                  labelText: 'Select Year',
+                )
               ),
-              hintText: 'Apartment,building,floor,etc',
-            ),
+
+              ],
           ),
 
           SizedBox(height: 20), 
