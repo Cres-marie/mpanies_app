@@ -43,6 +43,9 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   hoverover: ^0.1.1
   responsive_builder: ^0.7.0
+  csc_picker: ^0.2.7
+  country_picker: ^2.0.20
+  country_list_pick: ^1.0.1+6
 
 dev_dependencies:
   flutter_test:

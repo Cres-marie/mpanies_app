@@ -42,7 +42,25 @@ class _OrdersScreenState extends State<OrdersScreen> {
             }
           
             if (sizingInformation.deviceScreenType == DeviceScreenType.tablet) {
-              return Container(color:Colors.red);
+              return Container(
+                child: Column(
+                  children: [
+                    HeaderContainer(),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            OrdersList(),
+                            Footer()
+                          ],
+                        ),
+                      ),
+                    ),
+                    
+                    
+                  ],
+                ),
+              );
             }
           
             if (sizingInformation.deviceScreenType == DeviceScreenType.watch) {
