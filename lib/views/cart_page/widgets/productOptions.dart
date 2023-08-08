@@ -1,6 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
+import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/rating.dart';
 
 class ProductOptions extends StatefulWidget {

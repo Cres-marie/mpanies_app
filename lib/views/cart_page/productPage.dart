@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/models/responsive.dart';
+import 'package:mpanies_app/views/cart_page/widgets/expansionList.dart';
 import 'package:mpanies_app/views/cart_page/widgets/productOptions.dart';
 import 'package:mpanies_app/views/home_page/widgets/footer.dart';
 import 'package:mpanies_app/views/home_page/widgets/menu.dart';
 import 'package:mpanies_app/views/home_page/widgets/newArrival.dart';
 import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
+import 'package:mpanies_app/views/cart_page/widgets/products_container.dart';
+import 'package:mpanies_app/views/cart_page/widgets/expansionList.dart';
+import 'package:mpanies_app/views/cart_page/widgets/productOptions.dart';
 import 'package:mpanies_app/views/cart_page/widgets/products_container.dart';
 
 import '../../utils/constants.dart';
@@ -64,16 +68,21 @@ class _ProductPageState extends State<ProductPage> {
                       ),
 
                       if (Responsive.isDesktop(context))
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      Column(
                         children: [
-                          ProductsContainer(),
-                          SizedBox(width: 10,),
-                          ProductOptions(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              ProductsContainer(),
+                              SizedBox(width: 10,),
+                              ProductOptions(),
+                              
+                            ],
+                          ),
                           
                         ],
                       ),
-
+                      ExpandedItem(),
                       //ProductsContainer(),
                       NewArrival(),
                       NewsLetter(),
