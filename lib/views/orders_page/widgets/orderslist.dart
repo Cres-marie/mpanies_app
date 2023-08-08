@@ -3,8 +3,10 @@ import 'package:mpanies_app/models/orders.dart';
 import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/views/checkout_page/checkoutScreen.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
+import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
 
 import '../../../models/trending.dart';
+import '../../../widgets/hoverWidget.dart';
 import '../../cart_page/widgets/quantityCounter.dart';
 
 class OrdersList extends StatefulWidget {
@@ -34,15 +36,14 @@ class _OrdersListState extends State<OrdersList> {
                   Container(
                     height: 40,
                     width: 200,
-                    child: ElevatedButton(
-                      onPressed: (){},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black, // Set background color to black
-                          //color: Colors.white, // Set text color to white
-                        elevation: 4, // Set the elevation shadow
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-                      ),                      
-                      child: Text('CHECKOUT',style: TextStyle(fontSize: 16),),
+                    child: ElevatedHoverButton(
+                      text: 'Continue Shopping',
+                      defaultColor: Colors.black,
+                      hoverColor: k2SecondaryGold,
+                      onTap: () {
+                        Navigator.pop(context); // Navigate back to the previous page
+                      },
+                          //icon: Icons.shopping_bag,
                     ),
                   ),           
                 ],
@@ -222,21 +223,18 @@ class _OrdersListState extends State<OrdersList> {
                     Container(
                       height: 40,
                       width: 400,
-                      child: ElevatedButton(
-                        onPressed: (){
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Checkout()),
-                          );
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black, // Set background color to black
-                            //color: Colors.white, // Set text color to white
-                          elevation: 4, // Set the elevation shadow
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-                        ),                      
-                        child: Text('CHECKOUT',style: TextStyle(fontSize: 16),),
-                      ),
+                      child: ElevatedHoverButton(
+                      text: 'CheckOut',
+                      defaultColor: Colors.black,
+                      hoverColor: k2SecondaryGold,
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Checkout()),
+                        ); // Navigate back to the previous page
+                      },
+                      icon: Icons.lock,
+                    ),
                     ),           
                         ],
                       ),

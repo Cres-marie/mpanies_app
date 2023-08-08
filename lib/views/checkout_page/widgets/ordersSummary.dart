@@ -39,47 +39,52 @@ class _OrdersSummaryState extends State<OrdersSummary> {
 
           SizedBox(height: 10,),
 
-          Container(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: myOrders.length,
-              itemBuilder: (BuildContext context, int index) {
-                final Orders order = myOrders[index];
-                return Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          flex: 1,
-                          child: Row(
-                            children: [                            
-                              Container(
-                                color: kPrimaryColor,
-                                width: 200,// Adjust the width as needed
-                                padding: EdgeInsets.all(20),
-                                //margin: EdgeInsets.all(),
-                                child: Image.asset(order.imageUrl, width: 200, height: 120,)
-                              ),                            
-                              SizedBox(width: 10,),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(order.description),
-                                    Text(order.price),                                 
-                                    
-                                  ]
-                                ),
-                              )                    
-                            ],
+          SingleChildScrollView(
+            child: Container(
+              height: 300,
+              child: ListView.builder(
+                shrinkWrap: true,
+                scrollDirection: Axis.vertical,
+                itemCount: myOrders.length,
+                itemBuilder: (BuildContext context, int index) {
+                  final Orders order = myOrders[index];
+                  return Column(
+                    children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            flex: 1,
+                            child: Row(
+                              children: [                            
+                                Container(
+                                  //color: kPrimaryColor,
+                                  width: 200,// Adjust the width as needed
+                                  //height:40,
+                                  padding: EdgeInsets.all(20),
+                                  //margin: EdgeInsets.all(),
+                                  child: Image.asset(order.imageUrl, width: 200, height: 120,)
+                                ),                            
+                                SizedBox(width: 10,),
+                                Expanded(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(order.description),
+                                      Text(order.price),                                 
+                                      
+                                    ]
+                                  ),
+                                )                    
+                              ],
+                            ),
+                            
                           ),
-                          
-                        ),
-                      ]
-                    )
-                  ]
-                );
-              }
+                        ]
+                      )
+                    ]
+                  );
+                }
+              ),
             ),
           ),
           SizedBox(height: 20,),

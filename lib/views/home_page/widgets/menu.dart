@@ -109,7 +109,7 @@ Widget getPageForCategory(Category category) {
     return MakeUp();
   } else if(category.name == 'Nails'){
     return Nails();
-  }
+  } 
 
   // Add similar conditions for other categories
   // You can return a default page if needed

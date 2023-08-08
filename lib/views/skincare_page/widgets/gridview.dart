@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/rating.dart';
 import '../../../models/trending.dart';
 import '../../../utils/constants.dart';
+import '../../../widgets/hoverWidget.dart';
+import '../../cart_page/productPage.dart';
 
 class WebGridView extends StatefulWidget {
   const WebGridView({super.key});
@@ -55,8 +58,7 @@ class _WebGridViewState extends State<WebGridView> {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
-                              Stack(
-                                children: [
+                              
                                 // Product image
                                   Image.asset(
                                     products[index].imageUrl,
@@ -64,32 +66,7 @@ class _WebGridViewState extends State<WebGridView> {
                                     width: 150,
                                     fit: BoxFit.cover,
                                   ),
-                                  Positioned(
-                                    top: 0,
-                                    right: 0,
-                                    child: MouseRegion(
-                                      onEnter: (_) {
-                                        setState(() {
-                                          _isHovered[index] = true; // Set hover state to true
-                                        });
-                                      },
-                                      onExit: (_) {
-                                        setState(() {
-                                          _isHovered[index] = false; // Set hover state to false
-                                        });
-                                      },
-                                    child: InkWell(
-                                      onTap: () {},
-                                      child: Icon(
-                                        Icons.favorite, 
-                                        color:  _isHovered[index] ? kSecondaryColorPink : Colors.grey, 
-                                        size: 25,
-                                      )
-                                    ),
-                                    ),
-                                  ),                    
-                                ]
-                              ),
+                                                                
                               SizedBox(height: 8),
                               
                               Text(products[index].description, style: TextStyle(fontWeight: FontWeight.bold)),
@@ -101,17 +78,25 @@ class _WebGridViewState extends State<WebGridView> {
                               Container(
                                 height: 40,
                                 width: 140,
-                                child: ElevatedButton(
-                                  onPressed: (){},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.black, // Set background color to black
-                                      //color: Colors.white, // Set text color to white
-                                    elevation: 4, // Set the elevation shadow
-                                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-                                    ),                  
-                                  child: Text('Add To Bag',style: TextStyle(fontSize: 16),),
+                                child: Container(
+                                  height: 40,
+                                  width: 140,
+                                  child: ElevatedHoverButton(
+                                    text: 'Add To Bag',
+                                    defaultColor: Colors.black,
+                                    hoverColor: k2SecondaryGold,
+                                    onTap: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(builder: (context) => ProductPage()),
+                                      );
+                                    },
+                          //icon: Icons.shopping_bag,
+
+                                  ),
                                 ),
-                              )
+
+                              ),
                             ],
                           ),
                         ),
@@ -205,16 +190,24 @@ class _MobGridViewState extends State<MobGridView> {
                                   Container(
                                     height: 40,
                                     width: 140,
-                                    child: ElevatedButton(
-                                      onPressed: (){},
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.black, // Set background color to black
-                                          //color: Colors.white, // Set text color to white
-                                        elevation: 4, // Set the elevation shadow
-                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-                                        ),                  
-                                      child: Text('Add To Bag',style: TextStyle(fontSize: 16),),
-                                    ),
+                                    child: Container(
+                                      height: 40,
+                                      width: 140,
+                                      child: ElevatedHoverButton(
+                                        text: 'Add To Bag',
+                                        defaultColor: Colors.black,
+                                        hoverColor: k2SecondaryGold,
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => ProductPage()),
+                                          );
+                                        },
+                          //icon: Icons.shopping_bag,
+
+                                      ),
+                                    )
+,
                                   )
                                 ],
                               ),

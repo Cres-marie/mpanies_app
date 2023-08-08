@@ -14,6 +14,7 @@ class HoverIcon extends StatefulWidget {
 
 class _HoverIconState extends State<HoverIcon> {
   bool _isHovered = false;
+
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
@@ -29,41 +30,16 @@ class _HoverIconState extends State<HoverIcon> {
       },
       child: InkWell(
         onTap: widget.onPressed,
-        child: Stack(
-          children: [
-            Icon(
-            widget.iconData,
-            color: _isHovered ? kSecondaryColorPink : Colors.black,
-            size: _isHovered? 40.0 :  32.0
-            ),
-            if (_isHovered)
-              Positioned(
-                top: widget.size + 10,
-                left: 0,
-                child: PopupMenuButton<String>(
-                  itemBuilder: (BuildContext context) {
-                    return <PopupMenuEntry<String>>[
-                      PopupMenuItem<String>(
-                        value: 'item1',
-                        child: Text('Item 1'),
-                      ),
-                      PopupMenuItem<String>(
-                        value: 'item2',
-                        child: Text('Item 2'),
-                      ),
-                      // Add more items as needed
-                    ];
-                  },
-                )
-              )
-
-          ]
-        )
+        child: Icon(
+          widget.iconData,
+          color: _isHovered ? k2SecondaryGold : Colors.white,
+          size: _isHovered ? 20.0 : 20.0,
+        ),
       ),
     );
-
   }
 }
+
 
 
 class HoverText extends StatefulWidget {
@@ -99,7 +75,7 @@ class _HoverTextState extends State<HoverText> {
           widget.text,
           style: TextStyle(
             color: _isHovered ? k2SecondaryGold : Colors.white,
-            fontSize: _isHovered ? 18.0 : 18.0,
+            fontSize: _isHovered ? 16.0 : 16.0,
             fontWeight: _isHovered ? FontWeight.bold : FontWeight.bold,
           ),
         ),
@@ -153,3 +129,71 @@ class _HoverSocialIconButtonState extends State<HoverSocialIconButton> {
     );
   }
 }
+
+
+class ElevatedHoverButton extends StatefulWidget {
+  final String? text;
+  final Color defaultColor;
+  final Color hoverColor;
+  final VoidCallback? onTap;
+  final IconData? icon;
+
+  const ElevatedHoverButton({
+    Key? key,
+    this.text,
+    required this.defaultColor,
+    required this.hoverColor,
+    this.onTap,
+    this.icon,
+  }) : super(key: key);
+
+  @override
+  _ElevatedHoverButtonState createState() => _ElevatedHoverButtonState();
+}
+
+class _ElevatedHoverButtonState extends State<ElevatedHoverButton> {
+  bool isHovered = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            color: isHovered ? widget.hoverColor : widget.defaultColor,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          padding: EdgeInsets.all(12.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              if (widget.icon != null) ...[
+                Center(child: Icon(widget.icon, color: Colors.white)),
+                SizedBox(width: 8),
+              ],
+              if (widget.text != null) ...[
+                Text(
+                  widget.text!,
+                  style: TextStyle(color: Colors.white, fontSize: 14),
+                ),
+              ],
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+

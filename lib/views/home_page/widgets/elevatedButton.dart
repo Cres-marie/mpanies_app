@@ -1,29 +1,39 @@
-import 'package:flutter/material.dart';
+// import 'package:flutter/material.dart';
+// import 'package:mpanies_app/views/cart_page/productPage.dart';
 
-class ElevatedButtonIcon extends StatefulWidget {
-  const ElevatedButtonIcon({super.key});
+// import '../../../utils/constants.dart';
+// import '../../../widgets/hoverWidget.dart';
 
-  @override
-  State<ElevatedButtonIcon> createState() => _ElevatedButtonIconState();
-}
+// class ElevatedButtonIcon extends StatefulWidget {
+//   const ElevatedButtonIcon({super.key});
 
-class _ElevatedButtonIconState extends State<ElevatedButtonIcon> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-                        height: 40,
-                        width: 140,
-                        child: ElevatedButton(
-                          onPressed: (){},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black, // Set background color to black
-                      //color: Colors.white, // Set text color to white
-                            elevation: 4, // Set the elevation shadow
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-                          ),
-                      
-                          child: Text('Add To Bag',style: TextStyle(fontSize: 16),),
-                        ),
-                      );
-  }
-}
+//   @override
+//   State<ElevatedButtonIcon> createState() => _ElevatedButtonIconState();
+// }
+
+// class _ElevatedButtonIconState extends State<ElevatedButtonIcon> {
+
+//   bool isClicked = false;
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 40,
+//       width: 140,
+//       child: ElevatedHoverButton(
+//         text: 'Add To Bag',
+//         defaultColor: Colors.black,
+//         hoverColor: k2SecondaryGold,
+//         onTap: () {
+//           Navigator.push(
+//             context,
+//             MaterialPageRoute(builder: (context) => ProductPage()),
+//           );
+//         },
+//         //icon: Icons.shopping_bag,
+
+//       ),
+      
+//    );
+// }
+// }

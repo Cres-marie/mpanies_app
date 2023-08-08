@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/checkout_page/widgets/dropdown.dart';
 
+import '../../../utils/constants.dart';
+import '../../../widgets/hoverWidget.dart';
+
 class Paymentfield extends StatefulWidget {
   const Paymentfield({super.key});
 
@@ -121,15 +124,17 @@ class _PaymentfieldState extends State<Paymentfield> {
           Container(
             height: 50,
             width: 400,
-            child: ElevatedButton(
-              onPressed: (){},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black, // Set background color to black
-                //color: Colors.white, // Set text color to white
-                elevation: 4, // Set the elevation shadow
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-              ),                      
-              child: Text('Pay \$750',style: TextStyle(fontSize: 16),),
+            child: ElevatedHoverButton(
+              text: 'Pay \$750',
+              defaultColor: Colors.black,
+              hoverColor: k2SecondaryGold,
+              onTap: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => Checkout()),
+                        // ); // Navigate back to the previous page
+              },
+                      //icon: Icons.lock,
             ),
           ),
 

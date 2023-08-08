@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mpanies_app/widgets/hoverWidget.dart';
 
 import '../../../models/responsive.dart';
 import '../../../utils/constants.dart';
@@ -63,24 +64,35 @@ class Footer extends StatelessWidget {
   }
 }
 
-class SocialIcon extends StatelessWidget {
+class SocialIcon extends StatefulWidget {
 
   final String icon;
   const SocialIcon({required this.icon,});
-  
+
+  @override
+  State<SocialIcon> createState() => _SocialIconState();
+}
+
+class _SocialIconState extends State<SocialIcon> {
+  bool isClicked = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 35,
-      width: 35,
-      padding: EdgeInsets.all(8.0),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(8.0),
-          border: Border.all(
-            color: Colors.grey.withOpacity(0.5),
-          )),
-      child: SvgPicture.asset(icon),
+    return InkWell(
+      onTap: () {
+        
+      },
+      child: Container(
+        height: 35,
+        width: 35,
+        padding: EdgeInsets.all(8.0),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8.0),
+            border: Border.all(
+              color: Colors.grey.withOpacity(0.5),
+            )),
+        child: SvgPicture.asset(widget.icon),
+      ),
     );
   }
 }
@@ -105,15 +117,27 @@ class WebFooterMenu extends StatelessWidget {
                   SizedBox(height: 10,),
                   Row(
                     children: [
-                      Icon(Icons.place, color: Colors. white,),
-                      Text('Kampala, Uganda', style: fsubheadings, )
+                      HoverIcon(
+                        iconData: Icons.place,
+                        onPressed: () {}, 
+                        size: 20,
+                      ),
+                      HoverText(
+                        text: 'Kampala\, Uganda',
+                        onPressed: () {},
+                        size: 16.0, 
+                      )
                     ],
                   ),
                   SizedBox(height: 10,),
                   Row(
                     children: [
                       Icon(Icons.schedule, color: Colors. white,),
-                      Text('09:00am - 06:00pm ',style: fsubheadings, )
+                      HoverText(
+                        text: '09:00am - 06:00pm',
+                        onPressed: () {},
+                        size: 16.0, 
+                      )
                     ],
                   )
                 ],
@@ -128,14 +152,22 @@ class WebFooterMenu extends StatelessWidget {
                   Row(
                     children: [
                       Icon(Icons.phone, color: Colors. white,),
-                      Text('(0000) 123-4789',style: fsubheadings, )
+                      HoverText(
+                        text: '(0000) 123-4789',
+                        onPressed: () {},
+                        size: 16.0, 
+                      )
                     ],
                   ),
                   SizedBox(height: 10,),
                   Row(
                     children: [
                       Icon(Icons.email, color: Colors. white,),
-                      Text('info@example.com',style: fsubheadings, )
+                      HoverText(
+                        text: 'info@example.com',
+                        onPressed: () {},
+                        size: 16.0, 
+                      )
                     ],
                   )
                 ],
@@ -149,14 +181,22 @@ class WebFooterMenu extends StatelessWidget {
                   Row(
                     children: [
                       Icon(Icons.keyboard_arrow_right, color: Colors. white,),
-                      Text('Contact',style: fsubheadings, )
+                      HoverText(
+                        text: 'Contact',
+                        onPressed: () {},
+                        size: 16.0, 
+                      )
                     ],
                   ),
                   SizedBox(height: 10,),
                   Row(
                     children: [
                       Icon(Icons.keyboard_arrow_right, color: Colors. white,),
-                      Text('Shipping & Returns', style: fsubheadings,)
+                      HoverText(
+                        text: 'Shipping & Returns',
+                        onPressed: () {},
+                        size: 16.0, 
+                      )
                     ],
                   )
                 ],
@@ -187,14 +227,22 @@ class MobFooterMenu extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Icon(Icons.place, color: Colors. white,),
-                  Text('Kampala, Uganda',style: fsubheadings, )
+                  HoverText(
+                    text: 'Kampala\, Uganda',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
                 ],
               ),
               SizedBox(height: 10,),
               Row(
                 children: [
                   Icon(Icons.schedule, color: Colors. white,),
-                  Text('09:00am - 06:00pm ',style: fsubheadings, )
+                  HoverText(
+                    text: '09:00am - 06:00pm',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
                 ],
               )
             ],
@@ -209,14 +257,22 @@ class MobFooterMenu extends StatelessWidget {
                 Row(
                   children: [
                     Icon(Icons.phone, color: Colors. white,),
-                    Text('(0000) 123-4789',style: fsubheadings, )
+                    HoverText(
+                      text: '(0000) 123-4789',
+                      onPressed: () {},
+                      size: 16.0, 
+                    )
                   ],
                 ),
                 SizedBox(height: 10,),
                 Row(
                   children: [
                     Icon(Icons.email, color: Colors. white,),
-                    Text('info@example.com',style: fsubheadings, )
+                    HoverText(
+                      text: 'info@example.com',
+                      onPressed: () {},
+                      size: 16.0, 
+                    )
                   ],
                 )
               ],
@@ -230,14 +286,24 @@ class MobFooterMenu extends StatelessWidget {
               Row(
                 children: [
                   Icon(Icons.keyboard_arrow_right, color: Colors. white,),
-                  Text('Contact', style: fsubheadings,)
+                  HoverText(
+                    text: 'Contact',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
+            
                 ],
               ),
               SizedBox(height: 10,),
               Row(
                 children: [
                   Icon(Icons.keyboard_arrow_right, color: Colors. white,),
-                  Text('Shipping & Returns', style: fsubheadings,)
+                  HoverText(
+                    text: 'Shipping & Returns',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
+
                 ],
               )
             ],

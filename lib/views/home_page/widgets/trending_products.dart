@@ -4,6 +4,7 @@ import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
 import 'package:mpanies_app/views/cart_page/productPage.dart';
 
 import '../../../utils/constants.dart';
+import '../../../widgets/hoverWidget.dart';
 
 class TrendingProducts extends StatefulWidget {
   const TrendingProducts({super.key});
@@ -62,24 +63,21 @@ class _ProductCardState extends State<ProductCard> {
     return Container(
       child: InkWell(
         onTap: (){
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => ProductPage()),
-          );
+          
         },
         child: MouseRegion(
           onEnter: (_) {
-    setState(() {
-      _isHovered = true; // Set hover state to true
-    });
-  },
-  onExit: (_) {
-    setState(() {
-      _isHovered = false; // Set hover state to false
-    });
+            setState(() {
+              _isHovered = true; // Set hover state to true
+            });
+          },
+          onExit: (_) {
+            setState(() {
+              _isHovered = false; // Set hover state to false
+        });
   },
           child: Transform.scale(
-            scale: _isHovered ? 1.07 : 1.0,
+            scale: _isHovered ? 1.02 : 1.0,
             child: Card(
               // Add any desired styling to the card
               elevation: 2.0,
@@ -116,7 +114,26 @@ class _ProductCardState extends State<ProductCard> {
                         style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold, color:Colors.blue),
                       ),
                       SizedBox(height: 4),
-                      ElevatedButtonIcon()
+                      Container(
+                        height: 40,
+                        width: 140,
+                        child: ElevatedHoverButton(
+                          text: 'Add To Bag',
+                          defaultColor: Colors.black,
+                          hoverColor: k2SecondaryGold,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ProductPage()),
+                            );
+                          },
+                          //icon: Icons.shopping_bag,
+
+                        ),
+                      )
+
+      
+   
                     ],
                   ),
                   ]

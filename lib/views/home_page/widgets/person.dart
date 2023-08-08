@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/views/register_page/register_screen.dart';
 import 'package:mpanies_app/widgets/hoverWidget.dart';
 import '../../login_page/login_screen.dart';
@@ -18,13 +19,7 @@ class _PersonIconState extends State<PersonIcon> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        setState(() {
-          isClicked = !isClicked;
-        });
-      },
-      child: IconButton(
-        onPressed: (){
-          showMenu(
+        showMenu(
             context: context,
             position: RelativeRect.fromLTRB(10, 60, 0, 0),
             items: [
@@ -95,16 +90,18 @@ class _PersonIconState extends State<PersonIcon> {
                 MaterialPageRoute(builder: (context) => OrdersScreen()), // Replace with your OrdersScreen
               );
             }
+
+            setState(() {
+              isClicked = false; // Reset the color after the menu is closed
             });
-          },
-        
-          icon: Icon(Icons.person, color: isClicked ? Colors.red : Colors.black,)
-            ),
-          
-              
-            
-        
-      
+          });
+
+          setState(() {
+          isClicked = true; // Set the color when the icon is clicked
+        });
+      },
+      child: Icon(Icons.person, size: 30, color: isClicked ? k2SecondaryGold : Colors.black,)
+                  
     );
         
         // Navigator.push(

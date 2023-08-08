@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/cart_page/widgets/productcolors.dart';
 import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
 import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
+import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
+import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/rating.dart';
+
+import '../../../utils/constants.dart';
+import '../../../widgets/hoverWidget.dart';
 
 class ProductOptions extends StatefulWidget {
   const ProductOptions({super.key});
@@ -83,20 +88,26 @@ class _ProductOptionsState extends State<ProductOptions> {
           initialValue: 1,
         ),
           SizedBox(height: 20,),
-          Container(
-            height: 40,
-            width: 240,
-            child: ElevatedButton(
-              onPressed: (){},
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.black, // Set background color to black
-                      //color: Colors.white, // Set text color to white
-                elevation: 4, // Set the elevation shadow
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-              ),                      
-              child: Text('Add To Bag',style: TextStyle(fontSize: 16),),
-            ),
-          )
+          
+            Container(
+              height: 40,
+              width: 140,
+              child: ElevatedHoverButton(
+                text: 'Add To Bag',
+                defaultColor: Colors.black,
+                hoverColor: k2SecondaryGold,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => OrdersScreen()),
+                  );
+                },
+                          //icon: Icons.shopping_bag,
+
+              ),
+            )
+
+          
         ],
       ),
     );

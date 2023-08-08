@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
 import '../../../models/new.dart';
 import '../../../utils/constants.dart';
+import '../../../widgets/hoverWidget.dart';
+import '../../cart_page/productPage.dart';
 
 class NewArrival extends StatefulWidget {
   const NewArrival({Key? key}) : super(key: key);
@@ -54,67 +56,101 @@ class ProductCard extends StatefulWidget {
 
 class _ProductCardState extends State<ProductCard> {
 
+  bool _isHovered = false;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       child: InkWell(
         onTap: () {},
-        child: Card(
-          // Add any desired styling to the card
-          elevation: 2.0,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
-          child: Container(
-            color: kPrimaryColor,
-            width: 250,// Adjust the width as needed
-            padding: EdgeInsets.all(20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                // Product image
-                Stack(
+        child: MouseRegion(
+          onEnter: (_) {
+            setState(() {
+              _isHovered = true; // Set hover state to true
+            });
+          },
+          onExit: (_) {
+            setState(() {
+              _isHovered = false; // Set hover state to false
+            });
+          },
+          child: Transform.scale(
+            scale: _isHovered ? 1.02 : 1.0,
+            child: Card(
+              // Add any desired styling to the card
+              elevation: 2.0,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+              child: Container(
+                color: kPrimaryColor,
+                width: 250,// Adjust the width as needed
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     // Product image
-                    Image.asset(
-                      widget.product.imageUrl,
-                      height: 150,
-                      width: 150,
-                      fit: BoxFit.cover,
-                    ),
-                    Positioned(
-                      top: 0,
-                      right: 0,
-                        child: InkWell(
-                          onTap: () {},
-                            child: Container(
-                              padding: EdgeInsets.all(12),
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.black
-                              ),
-                              child: Text('New',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
-                            )
+                    Stack(
+                      children: [
+                        // Product image
+                        Image.asset(
+                          widget.product.imageUrl,
+                          height: 150,
+                          width: 150,
+                          fit: BoxFit.cover,
                         ),
-                      ),
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                            child: InkWell(
+                              onTap: () {},
+                                child: Container(
+                                  padding: EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.black
+                                  ),
+                                  child: Text('New',style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+                                )
+                            ),
+                          ),
+                        
+                        
+                      ]
+                    ),
                     
-                    
-                  ]
+                    SizedBox(height: 8),
+                    // Product description
+                    Text(
+                      widget.product.description,
+                      style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 4),
+                    // Product price
+                    Text(
+                      widget.product.price,
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color:Colors.blue),
+                    ),
+                    SizedBox(height: 4),
+                    Container(
+                        height: 40,
+                        width: 140,
+                        child: ElevatedHoverButton(
+                          text: 'Add To Bag',
+                          defaultColor: Colors.black,
+                          hoverColor: k2SecondaryGold,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => ProductPage()),
+                            );
+                          },
+                          //icon: Icons.shopping_bag,
+
+                        ),
+                      )
+
+                  ],
                 ),
-                
-                SizedBox(height: 8),
-                // Product description
-                Text(
-                  widget.product.description,
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(height: 4),
-                // Product price
-                Text(
-                  widget.product.price,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color:Colors.blue),
-                ),
-                SizedBox(height: 4),
-                ElevatedButtonIcon()
-              ],
+              ),
             ),
           ),
         ),
