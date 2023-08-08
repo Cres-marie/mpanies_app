@@ -26,7 +26,8 @@ class _ImageSliderState extends State<ImageSlider> {
     double imageWidth = MediaQuery.of(context).size.width - 75;
     return 
       SizedBox(
-        child: Row(
+        child: (Responsive.isDesktop(context))
+         ? Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
@@ -50,28 +51,28 @@ class _ImageSliderState extends State<ImageSlider> {
             ),
           ],
         )
-                // : Column(
-                //     children: [
-                //       Row(
-                //           mainAxisAlignment: MainAxisAlignment.center,
-                //           children: List.generate(
-                //               widget.images.length,
-                //               (index) => _GalleryImageItem(
-                //                     image: widget.images[index],
-                //                     isSelected: index == _selectedIndex,
-                //                     onPressed: () {
-                //                       _selectImage(index);
-                //                     },
-                //                   ))),
-                //       SizedBox(
-                //         width: imageWidth < 723 ? imageWidth : 723,
-                //         height: 453,
-                //         child: Image.network(
-                //           widget.images[_selectedIndex],
-                //         ),
-                //       ),
-                //     ].reversed.toList(),
-                //   )
+                : Column(
+                    children: [
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: List.generate(
+                              widget.images.length,
+                              (index) => _GalleryImageItem(
+                                    image: widget.images[index],
+                                    isSelected: index == _selectedIndex,
+                                    onPressed: () {
+                                      _selectImage(index);
+                                    },
+                                  ))),
+                      SizedBox(
+                        width: imageWidth < 723 ? imageWidth : 723,
+                        height: 353,
+                        child: Image.network(
+                          widget.images[_selectedIndex],
+                        ),
+                      ),
+                    ].reversed.toList(),
+                  )
                   
       );          
   }
@@ -92,7 +93,7 @@ class _GalleryImageItem extends StatelessWidget {
       child: GestureDetector(
         onTap: onPressed,
         child: Container(
-          margin: EdgeInsets.only(left: 80, top: 30),
+          //margin: EdgeInsets.only(left: 80, top: 30),
           padding: EdgeInsets.all(2), // Add padding around the image
           decoration: BoxDecoration(
               border: isSelected
