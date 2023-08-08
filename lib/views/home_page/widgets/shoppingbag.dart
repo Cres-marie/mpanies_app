@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/widgets/hoverWidget.dart';
 
 import '../../../models/trending.dart';
@@ -12,33 +13,41 @@ class ShoppingBag extends StatefulWidget {
 }
 
 class _ShoppingBagState extends State<ShoppingBag> {
+
+  bool isClicked = false;
+
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        IconButton(
-          onPressed: (){
+    return InkWell(
+      onTap: () {
+            setState(() {
+              isClicked = !isClicked;
+            });
 
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => OrdersScreen()), // Replace with your OrdersScreen
-            );
-
-          },
-          icon:Icon(Icons.shopping_bag_outlined,),          
-        ),
-        Positioned(
-          top: 0, right: 0, // Adjust the position as needed
-          child: Container(
-            padding: EdgeInsets.all(4),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 73, 70, 69),
-              shape: BoxShape.circle,
+            Future.delayed(Duration(milliseconds: 70), () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => OrdersScreen()), // Replace with your OrdersScreen
+          );
+        });
+      },
+      child: Stack(
+        children: [
+          Icon(Icons.shopping_bag_outlined, size: 30, color: isClicked ? k2SecondaryGold : Colors.black, ),          
+          
+          Positioned(
+            top: 0, right: 0, // Adjust the position as needed
+            child: Container(
+              padding: EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: const Color.fromARGB(255, 73, 70, 69),
+                shape: BoxShape.circle,
+              ),
+              child: Text('0',style: TextStyle(color: Colors.white),),
             ),
-            child: Text('0',style: TextStyle(color: Colors.white),),
           ),
-        ),
-      ],
+        ],
+      ),
     ); 
   }
 

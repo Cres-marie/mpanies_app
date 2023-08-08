@@ -90,8 +90,7 @@ class _ProductCardState extends State<ProductCard> {
                 padding: EdgeInsets.all(20),
                 child: Column(
                   children: [
-                    Stack(
-                      children: [
+                    
                         // Product image
                         Image.asset(
                           widget.product.imageUrl,
@@ -99,32 +98,8 @@ class _ProductCardState extends State<ProductCard> {
                           width: 150,
                           fit: BoxFit.cover,
                         ),
-                        Positioned(
-                          top: 8,
-                          right: 0,
-                          child: MouseRegion(
-                            onEnter: (_) {
-                              setState(() {
-                              _isHovered = true; // Set hover state to true
-                              });
-                            },
-                            onExit: (_) {
-                              setState(() {
-                                _isHovered = false; // Set hover state to false
-                              });
-                            },
-                            child: InkWell(
-                              onTap: () {},
-                                child: Icon(
-                                  Icons.favorite, 
-                                  color:  _isHovered ? kSecondaryColorPink : Colors.grey, 
-                                  size: 25,
-                                )
-                            ),
-                          ),
-                        ),                    
-                      ]
-                    ),
+                      
+                    
                     SizedBox(height: 8,),                   
                     Column(
                     crossAxisAlignment: CrossAxisAlignment.center,

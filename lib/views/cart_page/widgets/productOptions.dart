@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/views/cart_page/widgets/productcolors.dart';
 import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
 import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/rating.dart';
@@ -12,8 +13,10 @@ class ProductOptions extends StatefulWidget {
 }
 
 class _ProductOptionsState extends State<ProductOptions> {
+  int _selectedColorIndex = 0;
   @override
   Widget build(BuildContext context) {
+    
     return Container(
       width: 350,
       child: Column(
@@ -55,6 +58,19 @@ class _ProductOptionsState extends State<ProductOptions> {
               RatingStar()
             ],
           ),
+          ProductColors(
+            productColors: [
+              ProductColorModel("White", Colors.white),
+              ProductColorModel("Black", Colors.black),
+              ProductColorModel("Green", Colors.green)
+            ],
+            onChange: (index) {
+              setState(() {
+                _selectedColorIndex = index;
+              });
+            },
+            selectedIndex: _selectedColorIndex
+        ),
           SizedBox(height: 15,),
           AutoSizeText('Enriched with a nourishing blend of botanical extracts and potent antioxidants, our mask offers a spa-like indulgence in the comfort of your own home.',
           maxLines: 4, style: TextStyle(height: 1.5),

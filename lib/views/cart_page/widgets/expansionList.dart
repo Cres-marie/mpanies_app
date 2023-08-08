@@ -15,7 +15,8 @@ class _ReusableExpansionListState extends State<ReusableExpansionList> {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        width: MediaQuery.of(context).size.width / 2,
+        padding: EdgeInsets.only(left: 60),
+        constraints: BoxConstraints(maxWidth: 550),
         child: ListView.separated(
           shrinkWrap :true,
           itemCount: widget.items.length,
