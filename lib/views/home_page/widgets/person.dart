@@ -30,21 +30,18 @@ class _PersonIconState extends State<PersonIcon> {
                   child: Container(
                     height: 40,
                     width: 400,
-                    child: ElevatedButton(
-                      onPressed: (){
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginScreen()),
-                        );
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black, // Set background color to black
-                          //color: Colors.white, // Set text color to white
-                        elevation: 4, // Set the elevation shadow
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)), // Set border radius
-                      ),                      
-                      child: Text('Sign In ',style: TextStyle(fontSize: 16),),
-                    ),
+                    child: ElevatedHoverButton(
+                        text: 'Sign In',
+                        defaultColor: Colors.black,
+                        hoverColor: k2SecondaryGold,
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => LoginScreen()),
+                          ); // Navigate back to the previous page
+                        },
+                        //icon: Icons.lock,
+                      ),
                   ),
                 ),
               ),

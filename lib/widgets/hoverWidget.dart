@@ -167,7 +167,7 @@ class _ElevatedHoverButtonState extends State<ElevatedHoverButton> {
           isHovered = false;
         });
       },
-      child: GestureDetector(
+      child: InkWell(
         onTap: widget.onTap,
         child: Container(
           decoration: BoxDecoration(
