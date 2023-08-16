@@ -6,6 +6,7 @@ import '../home_page/widgets/footer.dart';
 import '../home_page/widgets/header_container.dart';
 import '../home_page/widgets/menu.dart';
 import '../home_page/widgets/newsletter.dart';
+import '../skincare_page/widgets/gridview.dart';
 import '../skincare_page/widgets/sidemenu.dart';
 
 class TrendingProduct extends StatefulWidget {
@@ -49,7 +50,16 @@ class _TrendingProductState extends State<TrendingProduct> {
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       //WebSideView(),
-                      Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
+                      //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
+                      Row(
+                        children: [
+                          if (Responsive.isDesktop(context))
+                          Expanded(child: WebSideView()),
+                          Expanded(
+                            flex: 4,
+                            child: ResponsiveGrid())
+                        ],
+                      ),
                       NewsLetter(),
                       Footer()
                       //CheckboxExample()

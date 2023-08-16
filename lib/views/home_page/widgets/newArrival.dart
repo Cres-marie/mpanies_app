@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
+import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
 import '../../../models/new.dart';
 import '../../../utils/constants.dart';
 import '../../../widgets/hoverWidget.dart';
@@ -62,7 +63,12 @@ class _ProductCardState extends State<ProductCard> {
   Widget build(BuildContext context) {
     return Container(
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => ProductPage()),
+                                          );
+        },
         child: MouseRegion(
           onEnter: (_) {
             setState(() {
@@ -101,7 +107,9 @@ class _ProductCardState extends State<ProductCard> {
                           top: 0,
                           right: 0,
                             child: InkWell(
-                              onTap: () {},
+                              onTap: () {
+                                
+                              },
                                 child: Container(
                                   padding: EdgeInsets.all(12),
                                   decoration: BoxDecoration(
@@ -140,7 +148,7 @@ class _ProductCardState extends State<ProductCard> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => ProductPage()),
+                              MaterialPageRoute(builder: (context) => OrdersScreen()),
                             );
                           },
                           //icon: Icons.shopping_bag,

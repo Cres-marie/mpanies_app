@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_app/views/checkout_page/widgets/dropdown.dart';
 
 import '../../../utils/constants.dart';
@@ -28,10 +29,33 @@ class _PaymentfieldState extends State<Paymentfield> {
         children: [
 
           Row(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Image.asset('assets/images/paypal.webp', height: 70, width:100),
-              Image.asset('assets/images/visa.jpg',height: 50, width:80),
-              Image.asset('assets/images/mc.jpg',height: 50, width:80)
+              PaymentOptionsHover(
+                defaultColor: Colors.transparent, 
+                hoverColor: kPrimaryColor,
+                onTap: () {},
+                child: SvgPicture.asset('assets/images/paypal.svg', height: 50, width:80) ,
+              ),
+              PaymentOptionsHover(
+                defaultColor: Colors.transparent, 
+                hoverColor: kPrimaryColor,
+                onTap: () {},
+                child: SvgPicture.asset('assets/images/visa.svg', height: 50, width:80) ,
+              ),
+              PaymentOptionsHover(
+                defaultColor: Colors.transparent, 
+                hoverColor: kPrimaryColor,
+                onTap: () {},
+                child: SvgPicture.asset('assets/images/mc.svg', height: 50, width:80) ,
+              ),
+              PaymentOptionsHover(
+                defaultColor: Colors.transparent, 
+                hoverColor: kPrimaryColor,
+                onTap: () {},
+                child: Image.asset('assets/images/D-Money.png', height: 50, width:80) ,
+              ),
+              
             ],
           ),
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_app/models/trending.dart';
 import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
 import 'package:mpanies_app/views/cart_page/productPage.dart';
+import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
 
 import '../../../utils/constants.dart';
 import '../../../widgets/hoverWidget.dart';
@@ -63,7 +64,10 @@ class _ProductCardState extends State<ProductCard> {
     return Container(
       child: InkWell(
         onTap: (){
-          
+          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(builder: (context) => ProductPage()),
+                                          );
         },
         child: MouseRegion(
           onEnter: (_) {
@@ -124,7 +128,7 @@ class _ProductCardState extends State<ProductCard> {
                           onTap: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => ProductPage()),
+                              MaterialPageRoute(builder: (context) => OrdersScreen()),
                             );
                           },
                           //icon: Icons.shopping_bag,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/filters.dart';
 import 'package:mpanies_app/views/home_page/widgets/footer.dart';
 import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
+import 'package:mpanies_app/views/skincare_page/widgets/gridview.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/sidemenu.dart';
 
 import '../../models/responsive.dart';
@@ -50,7 +51,17 @@ class _SkinCareState extends State<SkinCare> {
                     // ignore: prefer_const_literals_to_create_immutables
                     children: [
                       //WebSideView(),
-                      Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
+                      //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
+                      Row(
+                        children: [
+                          if (Responsive.isDesktop(context))
+                          Expanded(child: WebSideView()),
+                          Expanded(
+                            flex: 4,
+                            child: ResponsiveGrid())
+                        ],
+                      ),
+                      //ResponsiveGrid(),
                       NewsLetter(),
                       Footer()
                       //CheckboxExample()

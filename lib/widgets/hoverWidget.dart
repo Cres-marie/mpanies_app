@@ -197,3 +197,52 @@ class _ElevatedHoverButtonState extends State<ElevatedHoverButton> {
   }
 }
 
+
+class PaymentOptionsHover extends StatefulWidget {
+
+  final Color defaultColor;
+  final Color hoverColor;
+  final VoidCallback? onTap;
+  final Widget child;
+
+  const PaymentOptionsHover({super.key, required this.defaultColor, required this.hoverColor, this.onTap, required this.child,});
+
+  @override
+  State<PaymentOptionsHover> createState() => _PaymentOptionsHoverState();
+}
+
+class _PaymentOptionsHoverState extends State<PaymentOptionsHover> {
+  bool isHovered = false;
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          isHovered = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          isHovered = false;
+        });
+      },
+      child: InkWell(
+        onTap: widget.onTap,
+        child: Container(
+          decoration: BoxDecoration(
+            color: isHovered ? widget.hoverColor : widget.defaultColor,
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+          padding: EdgeInsets.all(12.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              widget.child
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
