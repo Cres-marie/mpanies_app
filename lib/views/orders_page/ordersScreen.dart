@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/home_page/widgets/footer.dart';
+import 'package:mpanies_app/views/orders_page/widgets/ordersTableView.dart';
 import 'package:mpanies_app/views/orders_page/widgets/orderslist.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -46,32 +47,13 @@ class _OrdersScreenState extends State<OrdersScreen> {
               child: SingleChildScrollView(
                 child: SafeArea(
                   child: Column(
-                    // ignore: prefer_const_literals_to_create_immutables
                     children: [
-                      //WebSideView(),
-                      //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
-                      Responsive.isMobile(context) // Check if the screen is mobile
-                        ? SingleChildScrollView(
-                          scrollDirection: Axis.horizontal,
-                          child: OrdersListTable(),
-                        )
-                        : OrdersListTable(),
-                  
+
+                      OrdersTableView(),
                       NewsLetter(),
                       Footer()
-                      //CheckboxExample()
-                  
-                      //Responsive.isDesktop(context) ? SideMenuView() : MobSideView(),
-                      //body
-                      //BodyContainer(),
                       
                       
-                      //footer
-                      //SizedBox(
-                        //height: 30,
-                      //),
-                      //Footer(),
-                      //now we make our website responsive
                     ],
                   ),
                 ),

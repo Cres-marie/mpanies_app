@@ -33,37 +33,9 @@ class _OrdersListTableState extends State<OrdersListTable> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(30),
       child: Column(
         children: [
-
-          // Container(
-          //     //margin: EdgeInsets.only(top: 50),
-          //     child: Row(
-          //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //       children: [
-          //         Container(//margin:EdgeInsets.only(left: 100),
-          //           child: Text('YOUR SHOPPING BAG', style: headings,)
-          //         ),
-          //         Container(
-          //           height: 40,
-          //           width: 200,
-          //           child: ElevatedHoverButton(
-          //             text: 'Continue Shopping',
-          //             defaultColor: Colors.black,
-          //             hoverColor: k2SecondaryGold,
-          //             onTap: () {
-          //               Navigator.pop(context); // Navigate back to the previous page
-          //             },
-          //                 //icon: Icons.shopping_bag,
-          //           ),
-          //         ),           
-          //       ],
-          //     ),
-          // ),
           
-          // SizedBox(height: 20,),
-
           Container(
             width: MediaQuery.of(context).size.width,
             //padding: EdgeInsets.all(30),
