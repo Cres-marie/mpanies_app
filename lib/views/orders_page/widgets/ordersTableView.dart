@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/views/orders_page/widgets/ordersContainer.dart';
 import 'package:mpanies_app/views/orders_page/widgets/ordersHeader.dart';
 import 'package:mpanies_app/views/orders_page/widgets/orderslist.dart';
 
@@ -27,6 +28,8 @@ class _OrdersTableViewState extends State<OrdersTableView> {
                           child: OrdersListTable(),
                         )
                         : OrdersListTable(),
+
+            OrdersContainer()
           ],
         ),
       );

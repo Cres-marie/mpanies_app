@@ -47,7 +47,6 @@ class _CustomHeaderState extends State<CustomHeader> {
               if (widget.onCancel != null)
                 Container(
                   height: 40,
-                  width: 60,
                   child: ElevatedButton(
                     onPressed: widget.onCancel,
                     style: ElevatedButton.styleFrom(
@@ -74,6 +73,7 @@ class _CustomHeaderState extends State<CustomHeader> {
                 },
                 child: Container(
                   height: 40,
+                  
                   child: ElevatedButton(
                     onPressed: widget.onTap,
                     style: ElevatedButton.styleFrom(
@@ -113,13 +113,16 @@ class OrdersHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomHeader(
       headerText: 'Your Shopping Bag',
-      buttonText: 'CheckOut',
+      buttonText: 'Continue Shopping',
       onTap: () {
-    // Your onTap callback logic here
+        // Your onTap callback logic here
+        Navigator.pop(context);
       },
       buttonColor: Colors.black,
       hoverColor: k2SecondaryGold,
-      iconData: Icons.lock, // Add the icon you want to use
+      iconData: Icons.shopping_basket, // Add the icon you want to use
     );
   }
 }
+
+

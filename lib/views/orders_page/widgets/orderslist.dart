@@ -35,7 +35,7 @@ class _OrdersListTableState extends State<OrdersListTable> {
     return Container(
       child: Column(
         children: [
-          
+
           Container(
             width: MediaQuery.of(context).size.width,
             //padding: EdgeInsets.all(30),
@@ -107,7 +107,7 @@ class _OrdersListTableState extends State<OrdersListTable> {
           //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
           //                 children: [
           //                   Text('Shipping Cost:', style: ordersubheadings,),
-          //                     Text('\$750', style: ordersubheadings,),
+          //                   Text('\$750', style: ordersubheadings,),
           //                 ],
           //               ),
           //               SizedBox(height: 20,),

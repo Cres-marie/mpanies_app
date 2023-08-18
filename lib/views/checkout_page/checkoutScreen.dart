@@ -31,7 +31,7 @@ class _CheckoutState extends State<Checkout> {
       ),
       body: Container(
         constraints: const BoxConstraints(maxWidth: 1600,),
-
+        
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -40,7 +40,7 @@ class _CheckoutState extends State<Checkout> {
                 child: Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(top: 20),
+                      margin: EdgeInsets.only(top: 20, bottom: 20),
                       padding: EdgeInsets.only(bottom: 30, top: 30),
                       constraints: const BoxConstraints(maxWidth: 500,),
                       color: Colors.white,
