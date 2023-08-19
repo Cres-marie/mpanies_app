@@ -3,6 +3,7 @@ import 'package:mpanies_app/views/checkout_page/widgets/checkout_field.dart';
 import 'package:mpanies_app/views/checkout_page/widgets/ordersSummary.dart';
 import 'package:mpanies_app/views/checkout_page/widgets/payment_field.dart';
 
+import '../../models/responsive.dart';
 import '../register_page/register_screen.dart';
 
 class Checkout extends StatefulWidget {
@@ -30,75 +31,33 @@ class _CheckoutState extends State<Checkout> {
         ),
       ),
       body: Container(
-        constraints: const BoxConstraints(maxWidth: 1600,),
-        
+        padding: EdgeInsets.all(40),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SingleChildScrollView(
-              child: Center(
-                child: Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(top: 20, bottom: 20),
-                      padding: EdgeInsets.only(bottom: 30, top: 30),
-                      constraints: const BoxConstraints(maxWidth: 500,),
-                      color: Colors.white,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          //Image.asset('assets/images/signin_balls.png', width: 260, ),
-                          //Image.asset('assets/images/mpanies.png', width: 150, ),              
-                          Container(
-                            padding: EdgeInsets.only(left:40),
-                            child: ListTile(
-                              title: Text('1. Enter Shipping Address', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 18, )),
-                            ),
-                          ),               
-                          SizedBox(height: 30),
-                          
-                          Checkoutfield(),
-                          SizedBox(height: 20),                
-                                      
-                        ],
-                      ),
-                    ),
-      
-                SizedBox(height: 20,),
-      
-                Container(
-                  padding: EdgeInsets.only(bottom: 30),
-                  constraints: const BoxConstraints(maxWidth: 500,),
-                  color: Colors.white,
+            //if (Responsive.isDesktop(context))
+            Expanded(
+              flex: 2,
+                child: SingleChildScrollView(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      //Image.asset('assets/images/signin_balls.png', width: 260, ),
-                      //Image.asset('assets/images/mpanies.png', width: 150, ),              
-                      Container(
-                        padding: EdgeInsets.only(left:40),
-                        child: ListTile(
-                          title: Text('2. Enter Payment Details', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 18, )),
-                        ),
-                      ),               
-                      SizedBox(height: 10),
                       
-                      Paymentfield(),
-                      SizedBox(height: 20),                
-                                  
+                      Checkoutfield(),
+                      SizedBox(height: 20,),
+                      Paymentfield()
                     ],
                   ),
                 ),
-                
-                  ],
-                ),
-      
-                
               ),
-            ),
-            OrdersSummary()
+            if (Responsive.isDesktop(context))
+            SizedBox(width: 50,),
+            if (Responsive.isDesktop(context))
+            Expanded(
+              flex: 1,
+              child: OrdersSummary()
+            )
+
+
           ],
         ),
       ),
