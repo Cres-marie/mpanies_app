@@ -52,7 +52,7 @@ class _OrdersListTableState extends State<OrdersListTable> {
                   DataColumn(label: Text('Sub Total')),
                 ],
                 source: _OrdersDataTableSource(selectedRows, _updateSelectedRow),
-                rowsPerPage: 2, // Number of rows to display per page
+                rowsPerPage: myOrders.length > 6 ? 6 : myOrders.length, // Number of rows to display per page
                  // Increase the height of data cells
                 dataRowMaxHeight: 140, 
               ),
@@ -61,89 +61,6 @@ class _OrdersListTableState extends State<OrdersListTable> {
           ),
 
           SizedBox(height: 20,),
-    
-          // Container(
-          //   //margin: EdgeInsets.only(right: 100),
-          //   child: Row(
-          //     children: [
-          //       Expanded(
-          //         //flex: 5,
-          //         child: Container(
-          //           child: TextButton(
-          //             onPressed: (){
-          //               Navigator.push(
-          //                 context,
-          //                 MaterialPageRoute(builder: (context) => Home()),
-          //               );
-          //             },
-          //             style: ElevatedButton.styleFrom(
-          //               fixedSize: const Size(80,50,),
-          //             ), 
-          //             child: ListTile(title: Text('Continue Shopping', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, color: Colors.black, decoration: TextDecoration.underline,))),
-          //           ),
-          //         ),
-          //       ),
-            
-          //       //Spacer(),
-          //       //Spacer(),
-          //         //Spacer(),
-                  
-          //       Expanded(
-          //         flex: 2,
-          //         child: Container(
-          //           width: MediaQuery.of(context).size.width/5,
-          //           child: Column(
-          //             crossAxisAlignment: CrossAxisAlignment.start,                        
-          //             children: [
-          //               Row(
-          //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                 children: [
-          //                     Text('Sub Total:', style: ordersubheadings,),
-          //                     Text('\$750', style: ordersubheadings,),
-          //                 ],
-          //               ),
-          //               SizedBox(height: 20,),
-          //               Row(
-          //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                 children: [
-          //                   Text('Shipping Cost:', style: ordersubheadings,),
-          //                   Text('\$750', style: ordersubheadings,),
-          //                 ],
-          //               ),
-          //               SizedBox(height: 20,),
-          //               Row(
-          //                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //                 children: [
-          //                   Text('Total:', style: ordersubheadings,),
-          //                   Text('\$750', style: ordersubheadings,),
-          //                 ],
-          //               ),
-                  
-          //               SizedBox(height: 20,),
-                            
-          //               Container(
-          //                     height: 40,
-          //                     width: MediaQuery.of(context).size.width,
-          //                     child: ElevatedHoverButton(
-          //                       text: 'CheckOut',
-          //                       defaultColor: Colors.black,
-          //                       hoverColor: k2SecondaryGold,
-          //                       onTap: () {
-          //                         Navigator.push(
-          //                           context,
-          //                           MaterialPageRoute(builder: (context) => Checkout()),
-          //                         ); // Navigate back to the previous page
-          //                       },
-          //                       icon: Icons.lock,
-          //                     ),
-          //               ),           
-          //             ],
-          //           ),
-          //         ),
-          //       ),
-          //     ],
-          //   )
-          // )
         ]
       ),
     );  

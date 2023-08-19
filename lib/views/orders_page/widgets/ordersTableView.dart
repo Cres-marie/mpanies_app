@@ -29,6 +29,7 @@ class _OrdersTableViewState extends State<OrdersTableView> {
                         )
                         : OrdersListTable(),
 
+            SizedBox(height: 20,),
             OrdersContainer()
           ],
         ),
