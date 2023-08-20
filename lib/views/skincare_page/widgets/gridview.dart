@@ -67,7 +67,7 @@ class _WebGridViewState extends State<WebGridView> {
                         onTap: (){
                           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => ProductPage()),
+                                            MaterialPageRoute(builder: (context) => ProductPage(product: filteredProducts[index])),
                                           );
                         },
                         child: Card(
@@ -168,22 +168,3 @@ class _ResponsiveGridState extends State<ResponsiveGrid> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

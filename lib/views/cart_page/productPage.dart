@@ -11,13 +11,14 @@ import 'package:mpanies_app/views/cart_page/widgets/expansionList.dart';
 import 'package:mpanies_app/views/cart_page/widgets/productOptions.dart';
 import 'package:mpanies_app/views/cart_page/widgets/products_container.dart';
 
+import '../../models/products.dart';
 import '../../utils/constants.dart';
 import '../home_page/widgets/header_container.dart';
 import '../skincare_page/widgets/sidemenu.dart';
 
 class ProductPage extends StatefulWidget {
-  
-  const ProductPage({super.key});
+  final ProductItem product;
+  const ProductPage({super.key, required this.product});
 
   @override
   State<ProductPage> createState() => _ProductPageState();
@@ -62,7 +63,7 @@ class _ProductPageState extends State<ProductPage> {
                         children: [
                           ProductsContainer(),
                           SizedBox(height: 25,),
-                          ProductOptions(),
+                          ProductOptions(product: widget.product,),
                           SizedBox(height: 65,),
                           //Spacer()                          
                         ],
@@ -76,7 +77,7 @@ class _ProductPageState extends State<ProductPage> {
                             children: [
                               ProductsContainer(),
                               SizedBox(width: 10,),
-                              ProductOptions(),
+                              ProductOptions(product: widget.product,),
                               
                             ],
                           ),

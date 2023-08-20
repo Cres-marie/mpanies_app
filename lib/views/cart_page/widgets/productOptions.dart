@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/models/products.dart';
 import 'package:mpanies_app/views/cart_page/widgets/productcolors.dart';
 import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
 import 'package:mpanies_app/views/cart_page/widgets/quantityCounter.dart';
@@ -11,7 +12,9 @@ import '../../../utils/constants.dart';
 import '../../../widgets/hoverWidget.dart';
 
 class ProductOptions extends StatefulWidget {
-  const ProductOptions({super.key});
+
+  final ProductItem product;
+  const ProductOptions({super.key, required this.product});
 
   @override
   State<ProductOptions> createState() => _ProductOptionsState();
@@ -41,11 +44,11 @@ class _ProductOptionsState extends State<ProductOptions> {
             ),
           ),
           SizedBox(height: 10,),
-          Text('Pink Skin Clay Mask'. toUpperCase(),
+          Text(widget.product.title. toUpperCase(),
             style: TextStyle(fontSize: 20),
           ),
           SizedBox(height: 5,),
-          Text('Skin Care', style: TextStyle(fontSize: 16),),
+          Text(widget.product.category, style: TextStyle(fontSize: 16),),
           Row(
             children: [
               Text(

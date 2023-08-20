@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
 import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
+import 'package:provider/provider.dart';
 import '../../../models/new.dart';
+import '../../../subCategoryProvider.dart';
 import '../../../utils/constants.dart';
 import '../../../widgets/hoverWidget.dart';
 import '../../cart_page/productPage.dart';
@@ -35,7 +37,7 @@ class _NewArrivalState extends State<NewArrival> {
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: ProductCard(product: products[index]),
+                  child: ProductCard(product: products[index], index: index),
                 );
               },
             ),
@@ -48,8 +50,9 @@ class _NewArrivalState extends State<NewArrival> {
 
 class ProductCard extends StatefulWidget {
   final NewArrivals product;
+  final int index; 
 
-  const ProductCard({required this.product});
+  const ProductCard({required this.product, required this.index});
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -61,12 +64,17 @@ class _ProductCardState extends State<ProductCard> {
 
   @override
   Widget build(BuildContext context) {
+
+    final filteredProducts =
+        Provider.of<SubcategoryProvider>(context).filteredProducts;
+
+
     return Container(
       child: InkWell(
         onTap: () {
           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => ProductPage()),
+                                            MaterialPageRoute(builder: (context) => ProductPage(product: filteredProducts[widget.index])),
                                           );
         },
         child: MouseRegion(
