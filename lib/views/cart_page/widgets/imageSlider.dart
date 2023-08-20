@@ -45,8 +45,11 @@ class _ImageSliderState extends State<ImageSlider> {
             SizedBox(
               width: imageWidth < 723 ? imageWidth : 400,
               height: 453,
-              child: Image.asset(
-                widget.images[_selectedIndex], fit: BoxFit.cover,
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Image.asset(
+                  widget.images[_selectedIndex], fit: BoxFit.cover,
+                ),
               ),
             ),
           ],
