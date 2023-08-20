@@ -84,7 +84,7 @@ class _WebGridViewState extends State<WebGridView> {
                                       width: 230,
                                       
                                       child: Image.asset(
-                                        productItems[index].images,
+                                        filteredProducts[index].images,
                                         height: 150,
                                         width: 150,
                                         fit: BoxFit.cover,
@@ -93,9 +93,9 @@ class _WebGridViewState extends State<WebGridView> {
                                                                   
                                 SizedBox(height: 8),
                                 
-                                Text(productItems[index].title, style: TextStyle(fontWeight: FontWeight.bold)),
+                                Text(filteredProducts[index].title, style: TextStyle(fontWeight: FontWeight.bold)),
                                 SizedBox(height: 8),
-                                Text('\$ ${productItems[index].price.toString()}', style: TextStyle(fontWeight: FontWeight.bold, color:Colors.blue),),
+                                Text('\$ ${filteredProducts[index].price.toString()}', style: TextStyle(fontWeight: FontWeight.bold, color:Colors.blue),),
                                 SizedBox(height: 8),
                                 RatingStar(),
                                 SizedBox(height: 8),

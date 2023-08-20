@@ -17,7 +17,8 @@ class WebSideView extends StatefulWidget {
 class _WebSideViewState extends State<WebSideView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return 
+      Container(
             margin: EdgeInsets.only(right: 40, top: 50, left: 10) ,
             child: Column(
               //crossAxisAlignment: CrossAxisAlignment.start,

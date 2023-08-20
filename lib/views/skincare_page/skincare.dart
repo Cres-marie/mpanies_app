@@ -55,9 +55,12 @@ class _SkinCareState extends State<SkinCare> {
                       Row(
                         children: [
                           if (Responsive.isDesktop(context))
-                          Expanded(child: WebSideView()),
+                          Container(
+                            width: 250, 
+                            child: WebSideView()
+                          ),
                           Expanded(
-                            flex: 4,
+                            //flex: 4,
                             child: ResponsiveGrid())
                         ],
                       ),
