@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/views/cart_page/widgets/productOptions.dart';
 
+import '../../../models/products.dart';
 import 'imageSlider.dart';
 
 class ProductsContainer extends StatefulWidget {
-  const ProductsContainer({super.key});
+  final ProductItem product;
+  const ProductsContainer({super.key, required this.product});
 
   @override
   State<ProductsContainer> createState() => _ProductsContainerState();

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/models/products.dart';
 import 'package:mpanies_app/models/trending.dart';
 import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
 import 'package:mpanies_app/views/cart_page/productPage.dart';
@@ -34,11 +35,11 @@ class _TrendingProductsState extends State<TrendingProducts> {
              // Adjust the height as needed
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: products.length,
+              itemCount: productItems.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: ProductCard(product: products[index], index: index,),
+                  child: ProductCard(product: productItems[index] ),
                 );
               },
             ),
@@ -50,10 +51,9 @@ class _TrendingProductsState extends State<TrendingProducts> {
 }
 
 class ProductCard extends StatefulWidget {
-  final Trending product;
-  final int index; 
+  final ProductItem product;
 
-  const ProductCard({required this.product, required this.index});
+  const ProductCard({required this.product,});
 
   @override
   State<ProductCard> createState() => _ProductCardState();
@@ -65,15 +65,14 @@ class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
 
-    final filteredProducts =
-        Provider.of<SubcategoryProvider>(context).filteredProducts;
+    
 
     return Container(
       child: InkWell(
         onTap: (){
           Navigator.push(
                                             context,
-                                            MaterialPageRoute(builder: (context) => ProductPage(product: filteredProducts[widget.index])),
+                                            MaterialPageRoute(builder: (context) => ProductPage(product: widget.product)),
                                           );
         },
         child: MouseRegion(
@@ -102,7 +101,7 @@ class _ProductCardState extends State<ProductCard> {
                     
                         // Product image
                         Image.asset(
-                          widget.product.imageUrl,
+                          widget.product.images,
                           height: 150,
                           width: 150,
                           fit: BoxFit.cover,
@@ -121,7 +120,7 @@ class _ProductCardState extends State<ProductCard> {
                       SizedBox(height: 4,),
                       // Product price
                       Text(
-                        widget.product.price,
+                        '\$${widget.product.price.toString()}',
                         style: TextStyle(fontSize: 14,fontWeight: FontWeight.bold, color:Colors.blue),
                       ),
                       SizedBox(height: 4),

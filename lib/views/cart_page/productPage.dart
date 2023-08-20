@@ -61,7 +61,7 @@ class _ProductPageState extends State<ProductPage> {
                       if (!Responsive.isDesktop(context))
                       Column(
                         children: [
-                          ProductsContainer(),
+                          ProductsContainer(product: widget.product,),
                           SizedBox(height: 25,),
                           ProductOptions(product: widget.product,),
                           SizedBox(height: 65,),
@@ -75,7 +75,7 @@ class _ProductPageState extends State<ProductPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              ProductsContainer(),
+                              ProductsContainer(product: widget.product,),
                               SizedBox(width: 10,),
                               ProductOptions(product: widget.product,),
                               
