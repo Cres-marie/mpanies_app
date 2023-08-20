@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:mpanies_app/subCategoryProvider.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   //debugPaintSizeEnabled = true;
-  runApp(MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => SubcategoryProvider(),
+      child: MyApp(),
+    ),
+
+  );
 }
 
 class MyApp extends StatefulWidget {

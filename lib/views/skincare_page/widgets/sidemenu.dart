@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:mpanies_app/models/responsive.dart';
+import 'package:mpanies_app/models/products.dart';
 import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/filters.dart';
-import 'package:mpanies_app/views/skincare_page/widgets/gridview.dart';
+import 'package:provider/provider.dart';
 
-import '../../../models/products.dart';
 import '../../../models/subcategories.dart';
+import '../../../subCategoryProvider.dart';
 
 class WebSideView extends StatefulWidget {
   const WebSideView({super.key});
@@ -27,12 +27,15 @@ class _WebSideViewState extends State<WebSideView> {
                 ),                      
                 ListView.builder(
                   shrinkWrap: true,
-                  itemCount: categories.length,
+                  itemCount: productItems.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Provider.of<SubcategoryProvider>(context, listen: false)
+                      .setSelectedSubcategory(productItems[index].subCategory);
+                      },
                       child: ListTile(
-                        title: Text(categories[index].name),
+                        title: Text(productItems[index].subCategory),
                         // Add onTap if you want to handle item clicks
                       ),
                     );

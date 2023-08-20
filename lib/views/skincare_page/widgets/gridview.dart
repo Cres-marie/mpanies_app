@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:mpanies_app/models/products.dart';
 import 'package:mpanies_app/views/home_page/widgets/elevatedButton.dart';
 import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/rating.dart';
+import 'package:provider/provider.dart';
 import '../../../models/responsive.dart';
 import '../../../models/trending.dart';
+import '../../../subCategoryProvider.dart';
 import '../../../utils/constants.dart';
 import '../../../widgets/hoverWidget.dart';
 import '../../cart_page/productPage.dart';
@@ -22,8 +25,14 @@ class WebGridView extends StatefulWidget {
 class _WebGridViewState extends State<WebGridView> {
   List<bool> _isHovered = List.filled(products.length, false); // Initialize hover states
   
+  
   @override
   Widget build(BuildContext context) {
+
+    final filteredProducts =
+        Provider.of<SubcategoryProvider>(context).filteredProducts;
+
+
     return Expanded(
           flex: 4,
           child: Column(
@@ -50,7 +59,7 @@ class _WebGridViewState extends State<WebGridView> {
                     childAspectRatio: widget.childAspectRatio,
                     mainAxisExtent: 340 // increase card height
                   ),
-                  itemCount: products.length,
+                  itemCount: filteredProducts.length,
                   itemBuilder: (context, index) {
                     return Container(
                       
@@ -69,21 +78,24 @@ class _WebGridViewState extends State<WebGridView> {
                             padding: EdgeInsets.all(20.0),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                
+                              children: [                               
                                   // Product image
-                                    Image.asset(
-                                      products[index].imageUrl,
-                                      height: 150,
-                                      width: 150,
-                                      fit: BoxFit.cover,
+                                    Container(
+                                      width: 230,
+                                      
+                                      child: Image.asset(
+                                        productItems[index].images,
+                                        height: 150,
+                                        width: 150,
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
                                                                   
                                 SizedBox(height: 8),
                                 
-                                Text(products[index].description, style: TextStyle(fontWeight: FontWeight.bold)),
+                                Text(productItems[index].title, style: TextStyle(fontWeight: FontWeight.bold)),
                                 SizedBox(height: 8),
-                                Text(products[index].price, style: TextStyle(fontWeight: FontWeight.bold, color:Colors.blue),),
+                                Text('\$ ${productItems[index].price.toString()}', style: TextStyle(fontWeight: FontWeight.bold, color:Colors.blue),),
                                 SizedBox(height: 8),
                                 RatingStar(),
                                 SizedBox(height: 8),
@@ -150,6 +162,7 @@ class _ResponsiveGridState extends State<ResponsiveGrid> {
         desktop: WebGridView(
           crossAxisCount: size.width < 1400 ? 4 : 5,
           childAspectRatio: size.width < 1400 ? 2.3 : 2.1,
+          
         ),
       ),
     );
@@ -174,116 +187,3 @@ class _ResponsiveGridState extends State<ResponsiveGrid> {
 
 
 
-// class MobGridView extends StatefulWidget {
-//   const MobGridView({super.key});
-
-//   @override
-//   State<MobGridView> createState() => _MobGridViewState();
-// }
-
-// class _MobGridViewState extends State<MobGridView> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Container(
-//                 margin: EdgeInsets.only( top: 30, left: 10) ,
-//                 padding: EdgeInsets.all(10.0),
-//                 width: double.infinity,
-//                 height: 40,
-//                 color:kTertiaryPeach ,
-//                 child: Text('Skin Care Products', style: sideheadings),
-//               ),
-//               Container(
-//                 padding: EdgeInsets.all(10.0),
-//                 margin: EdgeInsets.only( top: 20),
-//                 //height: 300,
-//                 child: Column(
-//                   children: [
-//                     GridView.builder(
-//                       shrinkWrap: true,
-//                       physics: ScrollPhysics(),// not to affect scrolling
-//                       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-//                         crossAxisCount: 2, // Number of columns in the grid
-//                         crossAxisSpacing: 10, // Spacing between columns
-//                         mainAxisSpacing: 14, // Spacing between rows
-//                         mainAxisExtent: 350 // increase card height
-//                       ),
-//                       itemCount: products.length,
-//                       itemBuilder: (context, index) {
-//                         return Container(
-                          
-//                           child: Card(
-//                             elevation: 6,
-//                             child: Container(
-//                               color: kPrimaryColor,
-//                               padding: EdgeInsets.all(10.0),
-//                               child: Column(
-//                                 crossAxisAlignment: CrossAxisAlignment.center,
-//                                 children: [
-//                                   Container(
-//                                     padding: EdgeInsets.all(10.0),
-//                                     child: Image.asset(
-//                                       products[index].imageUrl, height: 150, width: 150, fit:BoxFit.cover,
-//                                     ),
-//                                   ),
-//                                   SizedBox(height: 5),
-//                                   Center(child: Text(products[index].description, style: TextStyle(fontWeight: FontWeight.bold))),
-//                                   SizedBox(height: 5),
-//                                   Text(products[index].price, style: TextStyle(fontWeight: FontWeight.bold, color:Colors.blue)),
-//                                   SizedBox(height: 5),
-//                                   RatingBar.builder(
-//                                     initialRating: 4, // Set the initial rating value here
-//                                     minRating: 1,
-//                                     direction: Axis.horizontal,
-//                                     allowHalfRating: true,
-//                                     itemSize: 15,
-//                                     itemCount: 5,
-//                                     itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
-//                                     itemBuilder: (context, _) => Icon(
-//                                       Icons.star,
-//                                       color: kSecondaryColorPink,
-//                                     ),
-//                                     onRatingUpdate: (rating) {
-//                                       print(rating);
-//                                     },
-//                                   ),
-//                                   SizedBox(height: 8),
-//                                   Container(
-//                                     height: 40,
-//                                     width: 140,
-//                                     child: Container(
-//                                       height: 40,
-//                                       width: 140,
-//                                       child: ElevatedHoverButton(
-//                                         text: 'Add To Bag',
-//                                         defaultColor: Colors.black,
-//                                         hoverColor: k2SecondaryGold,
-//                                         onTap: () {
-//                                           Navigator.push(
-//                                             context,
-//                                             MaterialPageRoute(builder: (context) => ProductPage()),
-//                                           );
-//                                         },
-//                           //icon: Icons.shopping_bag,
-
-//                                       ),
-//                                     )
-// ,
-//                                   )
-//                                 ],
-//                               ),
-//                             ),
-//                           ),
-//                         );
-//                       },
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//             ],
-          
-//         );
-//   }
-// }

@@ -1,4 +1,5 @@
-class Product {
+
+class ProductItem {
   final int id;
   final String title;
   final String description;
@@ -6,11 +7,11 @@ class Product {
   final double discountPercentage;
   final double rating;
   final int stock;
-  final String brand;
   final String category;
-  final List<String> images;
+  final String subCategory;
+  final String images;
 
-  Product({
+  ProductItem({
     required this.id,
     required this.title,
     required this.description,
@@ -18,53 +19,92 @@ class Product {
     required this.discountPercentage,
     required this.rating,
     required this.stock,
-    required this.brand,
     required this.category,
+    required this.subCategory,
     required this.images,
   });
 
 }
 
-final List<Product> products = [
-    Product(
+final List<ProductItem> productItems = [
+    ProductItem(
       id : 1,
-      title: 'LUKE MOISTURIZING',
+      title: 'MakeUp Brushes',
       description: 'Our products are the best',
       price: 750.0,
       discountPercentage: 20,
       rating: 4,
       stock: 21,
-      brand: 'Moisteurizer',
       category: 'Skin Care',
-      images: [
-        'assets/images/shop-new-23.png',
-        'assets/images/shop-new-21.png',
-        'assets/images/shop-new-22.png',
-        'assets/images/shop-new-24.png',
-        'assets/images/shop-new-14.png',
-        'assets/images/shop-new-4.png',
-      ]
+      subCategory: 'Moisteurizer',
+      images: 'assets/images/makeup1.jpg',
+      
     ),
 
 
-    Product(
-      id : 1,
+    ProductItem(
+      id : 2,
+      title: 'LUKE MOISTURIZING',
+      description: 'Our products are the best',
+      price: 750.0,
+      discountPercentage: 20,
+      rating: 4,
+      stock: 0,
+      subCategory: 'cleanser',
+      category: 'Hair',
+      images: 'assets/images/shop-new-4.png',
+    ),
+
+    ProductItem(
+      id : 3,
+      title: 'LUKE MOISTURIZING',
+      description: 'Our products are the best',
+      price: 750.0,
+      discountPercentage: 20,
+      rating: 4,
+      stock: 18,
+      subCategory: 'Spray',
+      category: 'Hair',
+      images: 'assets/images/shop-new-14.png',
+    ),
+
+    ProductItem(
+      id : 4,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
       discountPercentage: 20,
       rating: 4,
       stock: 21,
-      brand: 'Spray',
+      subCategory: 'Sunscreen',
       category: 'Hair',
-      images: [
-        'assets/images/shop-new-23.png',
-        'assets/images/shop-new-21.png',
-        'assets/images/shop-new-22.png',
-        'assets/images/shop-new-24.png',
-        'assets/images/shop-new-14.png',
-        'assets/images/shop-new-4.png',
-      ]
+      images: 'assets/images/shop-new-24.png',
+    ),
+
+    ProductItem(
+      id : 4,
+      title: 'LUKE MOISTURIZING',
+      description: 'Our products are the best',
+      price: 750.0,
+      discountPercentage: 20,
+      rating: 4,
+      stock: 2,
+      subCategory: 'Spray',
+      category: 'Hair',
+      images: 'assets/images/shop-new-21.png',
+    ),
+
+    ProductItem(
+      id : 4,
+      title: 'LUKE MOISTURIZING',
+      description: 'Our products are the best',
+      price: 750.0,
+      discountPercentage: 20,
+      rating: 4,
+      stock: 15,
+      subCategory: 'Spray',
+      category: 'Hair',
+      images: 'assets/images/shop-new-22.png',
     ),
 
 ];
