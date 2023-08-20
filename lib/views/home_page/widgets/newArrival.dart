@@ -103,11 +103,14 @@ class _ProductCardState extends State<ProductCard> {
                     Stack(
                       children: [
                         // Product image
-                        Image.asset(
-                          widget.product.images,
-                          height: 150,
-                          width: 150,
-                          fit: BoxFit.cover,
+                        Container(
+                          width: 230,
+                          child: Image.asset(
+                            widget.product.images,
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                         Positioned(
                           top: 0,

@@ -100,11 +100,14 @@ class _ProductCardState extends State<ProductCard> {
                   children: [
                     
                         // Product image
-                        Image.asset(
-                          widget.product.images,
-                          height: 150,
-                          width: 150,
-                          fit: BoxFit.cover,
+                        Container(
+                          width: 230,
+                          child: Image.asset(
+                            widget.product.images,
+                            height: 150,
+                            width: 150,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       
                     
@@ -114,7 +117,7 @@ class _ProductCardState extends State<ProductCard> {
                     children: [
                       // Product description
                       Text(
-                        widget.product.description,
+                        widget.product.title,
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: 4,),

@@ -21,11 +21,7 @@ class _ProductsContainerState extends State<ProductsContainer> {
             child: Expanded(
               flex: 2,
               child: ImageSlider(
-                images: [
-                  'assets/images/shop-new-14.png',
-                  'assets/images/shop-new-21.png',
-                  'assets/images/shop-new-4.png',                  
-                ],
+                images: widget.product.slideImages,
               )
             ),
           );

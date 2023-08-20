@@ -10,6 +10,7 @@ class ProductItem {
   final String category;
   final String subCategory;
   final String images;
+  final List<String> slideImages;
 
   ProductItem({
     required this.id,
@@ -22,6 +23,7 @@ class ProductItem {
     required this.category,
     required this.subCategory,
     required this.images,
+    required this.slideImages
   });
 
 }
@@ -38,6 +40,13 @@ final List<ProductItem> productItems = [
       category: 'Skin Care',
       subCategory: 'Moisteurizer',
       images: 'assets/images/makeup1.jpg',
+      slideImages: [
+      'assets/images/makeup1.jpg',
+      'assets/images/makeup1.jpg',
+      'assets/images/makeup1.jpg',
+    ],
+
+
       
     ),
 
@@ -53,6 +62,11 @@ final List<ProductItem> productItems = [
       subCategory: 'cleanser',
       category: 'Hair',
       images: 'assets/images/shop-new-4.png',
+      slideImages: [
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+      'assets/images/shop-new-4.png',
+    ],
     ),
 
     ProductItem(
@@ -66,6 +80,11 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/shop-new-14.png',
+      slideImages: [
+      'assets/images/shop-new-14.png',
+      'assets/images/shop-new-14.png',
+      'assets/images/shop-new-14.png',
+    ],
     ),
 
     ProductItem(
@@ -79,6 +98,11 @@ final List<ProductItem> productItems = [
       subCategory: 'Sunscreen',
       category: 'Hair',
       images: 'assets/images/shop-new-24.png',
+      slideImages: [
+      'assets/images/shop-new-24.png',
+      'assets/images/shop-new-24.png',
+      'assets/images/shop-new-24.png',
+    ],
     ),
 
     ProductItem(
@@ -92,6 +116,11 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/shop-new-21.png',
+      slideImages: [
+      'assets/images/shop-new-21.png',
+      'assets/images/shop-new-21.png',
+      'assets/images/shop-new-21.png',
+    ],
     ),
 
     ProductItem(
@@ -105,6 +134,11 @@ final List<ProductItem> productItems = [
       subCategory: 'Spray',
       category: 'Hair',
       images: 'assets/images/shop-new-22.png',
+      slideImages: [
+      'assets/images/shop-new-22.png',
+      'assets/images/shop-new-22.png',
+      'assets/images/shop-new-22.png',
+    ],
     ),
 
 ];
