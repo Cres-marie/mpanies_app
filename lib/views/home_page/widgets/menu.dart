@@ -57,29 +57,12 @@ class _WebNavMenuState extends State<WebNavMenu> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          // Container(
-          //   height: 50,
-          //   color: Colors.black,
-          //   width: MediaQuery.of(context).size.width,
-          //   child: ListView.builder(
-          //shrinkWrap :true,
-          //     scrollDirection: Axis.horizontal,
-          //     itemCount: brand.length,
-          //     itemBuilder: (BuildContext context, int index) {
-          //       return InkWell(
-          //         onTap: (){},
-          //         child: Container(              
-          //           child: Center(child: Text(brand[index].name, style:navheadings)),                
-          //         ),
-          //       );
-          //     },
-          //   ),
-          // ),
+          
           for (Category category in brand)
             HoverText(
               text:category.name,
               onPressed: (){
-                Navigator.push(
+                Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => getPageForCategory(category)),
                 );

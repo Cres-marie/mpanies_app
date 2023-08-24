@@ -35,10 +35,8 @@ class _PersonIconState extends State<PersonIcon> {
                         defaultColor: Colors.black,
                         hoverColor: k2SecondaryGold,
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => LoginScreen()),
-                          ); // Navigate back to the previous page
+                          Navigator.of(context).pushReplacementNamed('/login');
+                          
                         },
                         //icon: Icons.lock,
                       ),
@@ -57,6 +55,7 @@ class _PersonIconState extends State<PersonIcon> {
                       Text('New to Mpanies?', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 12, )),
                       TextButton(
                         onPressed: (){
+                          
                           Navigator.push(
                             context,
                             MaterialPageRoute(builder: (context) => RegisterScreen()),

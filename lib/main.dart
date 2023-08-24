@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:mpanies_app/models/trending.dart';
 import 'package:mpanies_app/subCategoryProvider.dart';
 import 'package:mpanies_app/utils/pageStateManager.dart';
+import 'package:mpanies_app/views/bodycare_page/bodyCare.dart';
 import 'package:mpanies_app/views/cart_page/productPage.dart';
 import 'package:mpanies_app/views/checkout_page/checkoutScreen.dart';
+import 'package:mpanies_app/views/hair_page/hair.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
+import 'package:mpanies_app/views/login_page/login_screen.dart';
+import 'package:mpanies_app/views/login_page/widgets/login_field.dart';
+import 'package:mpanies_app/views/makeup_page/makeup.dart';
+import 'package:mpanies_app/views/nails_page/nails.dart';
+import 'package:mpanies_app/views/new_page/new.dart';
+import 'package:mpanies_app/views/register_page/register_screen.dart';
+import 'package:mpanies_app/views/skincare_page/skincare.dart';
+import 'package:mpanies_app/views/trending_page/trending.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
@@ -34,17 +45,17 @@ class _MyAppState extends State<MyApp> {
       initialRoute: PageStateManager.initialRoute, // Set the initial route
       routes: {
         '/': (context) => Home(), // Home screen
-        '/checkout/': (context) => Checkout() // Category List Page
-        //'/categories/add': (context) => AddCategory(), // Add Category Page
-        //'/products/list': (context) => ProductListPage(), // Product List Page
-        //'/products/add': (context) => AddProduct(), // Add Product Page
-        //'/orders/list': (context) => OrdersListPage(), // Orders List Page
-        //'/orders/details': (context) => ViewOrderDetails(), // Orders Page
-        //'/customers/list': (context) => CustomersPageList(), // Customers page
-        //'/users/list': (context) => UsersListPage(), // users List Page
-        //'/users/add': (context) => AddUser(), // Add User Page
-        //'/settings': (context) => SettingsPage(), // Settings page
-        //'/logout': (context) => LoginField(), // Settings page
+        '/checkout': (context) => Checkout(), // Checkout Page
+        '/bodyCare': (context) => BodyCare(), // Add Category Page
+        '/new': (context) => New(), // Product List Page
+        '/trending': (context) => TrendingProduct(), // Add Product Page
+        '/skincare': (context) => SkinCare(), // Orders List Page
+        '/hair': (context) => Hair(), // Orders Page
+        '/makeup': (context) => MakeUp(), // Customers page
+        '/nails': (context) => Nails(), // users List Page
+        //'/products': (context) => ProductPage(), // Add User Page
+        '/login': (context) => LoginScreen(), // Settings page
+        '/register': (context) => RegisterScreen(), // Settings page
       },
     );
   }

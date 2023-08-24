@@ -75,10 +75,7 @@ class _OrdersContainerState extends State<OrdersContainer> {
                         defaultColor: Colors.black,
                         hoverColor: k2SecondaryGold,
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Checkout()),
-                          ); // Navigate back to the previous page
+                          Navigator.of(context).pushReplacementNamed('/checkout');
                         },
                         icon: Icons.lock,
                       ),
