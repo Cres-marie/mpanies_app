@@ -76,7 +76,7 @@ class LoginScreen extends StatelessWidget {
                         },
                         //icon: Icons.lock,
                       ),
-                  ),
+                    ),
                   SizedBox(height: 20),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
