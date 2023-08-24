@@ -69,10 +69,8 @@ class LoginScreen extends StatelessWidget {
                         defaultColor: Colors.black,
                         hoverColor: k2SecondaryGold,
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Home()),
-                          ); // Navigate back to the previous page
+                           Navigator.pushNamed(context, '/');
+                          
                         },
                         //icon: Icons.lock,
                       ),
@@ -84,10 +82,8 @@ class LoginScreen extends StatelessWidget {
                       Text('New to Mpanies?', style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14, )),
                       TextButton(
                         onPressed: (){
-                          Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => RegisterScreen()),
-                        );
+                           Navigator.pushNamed(context, '/register');
+                          
                         }, 
                         child: Text('Sign Up', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, color: Colors.blue )),
                       )

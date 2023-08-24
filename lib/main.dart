@@ -13,6 +13,7 @@ import 'package:mpanies_app/views/login_page/widgets/login_field.dart';
 import 'package:mpanies_app/views/makeup_page/makeup.dart';
 import 'package:mpanies_app/views/nails_page/nails.dart';
 import 'package:mpanies_app/views/new_page/new.dart';
+import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
 import 'package:mpanies_app/views/register_page/register_screen.dart';
 import 'package:mpanies_app/views/skincare_page/skincare.dart';
 import 'package:mpanies_app/views/trending_page/trending.dart';
@@ -45,17 +46,17 @@ class _MyAppState extends State<MyApp> {
       initialRoute: PageStateManager.initialRoute, // Set the initial route
       routes: {
         '/': (context) => Home(), // Home screen
+        '/bodyCare': (context) => BodyCare(), // body care Page
+        '/new': (context) => New(), // new Page
+        '/trending': (context) => TrendingProduct(), // Trending Product Page
+        '/skincare': (context) => SkinCare(), // Skin care Page
+        '/hair': (context) => Hair(), // hair Page
+        '/makeup': (context) => MakeUp(), // makeup page
+        '/nails': (context) => Nails(), // nails Page
         '/checkout': (context) => Checkout(), // Checkout Page
-        '/bodyCare': (context) => BodyCare(), // Add Category Page
-        '/new': (context) => New(), // Product List Page
-        '/trending': (context) => TrendingProduct(), // Add Product Page
-        '/skincare': (context) => SkinCare(), // Orders List Page
-        '/hair': (context) => Hair(), // Orders Page
-        '/makeup': (context) => MakeUp(), // Customers page
-        '/nails': (context) => Nails(), // users List Page
-        //'/products': (context) => ProductPage(), // Add User Page
-        '/login': (context) => LoginScreen(), // Settings page
-        '/register': (context) => RegisterScreen(), // Settings page
+        '/orders': (context) => OrdersScreen(), // orders Page
+        '/login': (context) => LoginScreen(), // login page
+        '/register': (context) => RegisterScreen(), // register page
       },
     );
   }

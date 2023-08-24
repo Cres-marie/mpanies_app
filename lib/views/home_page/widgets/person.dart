@@ -35,7 +35,7 @@ class _PersonIconState extends State<PersonIcon> {
                         defaultColor: Colors.black,
                         hoverColor: k2SecondaryGold,
                         onTap: () {
-                          Navigator.of(context).pushReplacementNamed('/login');
+                          Navigator.of(context).pushNamed('/login');
                           
                         },
                         //icon: Icons.lock,
@@ -55,11 +55,8 @@ class _PersonIconState extends State<PersonIcon> {
                       Text('New to Mpanies?', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 12, )),
                       TextButton(
                         onPressed: (){
+                           Navigator.pushNamed(context, '/register');
                           
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => RegisterScreen()),
-                          );
                         }, 
                         child: Text('Sign Up', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, color: Colors.blue )),
                       )
@@ -81,10 +78,8 @@ class _PersonIconState extends State<PersonIcon> {
             ]
           ).then((value) {
             if (value == 'orders') {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => OrdersScreen()), // Replace with your OrdersScreen
-              );
+               Navigator.pushNamed(context, '/orders');
+              
             }
 
             setState(() {

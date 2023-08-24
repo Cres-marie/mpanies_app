@@ -76,10 +76,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         defaultColor: Colors.black,
                         hoverColor: k2SecondaryGold,
                         onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Home()),
-                          ); // Navigate back to the previous page
+                           Navigator.pushNamed(context, '/');
+                           
                         },
                         //icon: Icons.lock,
                       ),
@@ -91,10 +89,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Text('Already have an Account?', style: TextStyle(fontWeight: FontWeight.w600,fontSize: 14, )),
                       TextButton(
                         onPressed: (){
-                          Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => LoginScreen()),
-                        );
+                           Navigator.pushNamed(context, '/login');
+                          
                         }, 
                         child: Text('Sign In', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, color: Colors.blue )),
                       )
