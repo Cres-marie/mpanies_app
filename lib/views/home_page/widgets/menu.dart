@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mpanies_app/views/bodycare_page/bodycare.dart';
+import 'package:mpanies_app/models/products.dart';
+import 'package:mpanies_app/views/bodycare_page/bodyCare.dart';
 import 'package:mpanies_app/views/hair_page/hair.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
 import 'package:mpanies_app/views/makeup_page/makeup.dart';
@@ -58,9 +59,9 @@ class _WebNavMenuState extends State<WebNavMenu> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           
-          for (Category category in brand)
+          for (ProductItem category in productItems)
             HoverText(
-              text:category.name,
+              text:category.category,
               onPressed: (){
                 Navigator.pushReplacement(
                   context,
@@ -75,22 +76,22 @@ class _WebNavMenuState extends State<WebNavMenu> {
   }
 }
 
-Widget getPageForCategory(Category category) {
+Widget getPageForCategory(ProductItem category) {
   // Here you can determine which page to return based on the category
   // For example:
-  if (category.name == 'New') {
+  if (category.category== 'New') {
     return New();
-  } else if (category.name == 'Trending') {
+  } else if (category.category == 'Trending') {
     return TrendingProduct();
-  } else if (category.name == 'Skin Care') {
+  } else if (category.category == 'Skin Care') {
     return SkinCare();
-  } else if (category.name == 'Hair') {
+  } else if (category.category == 'Hair') {
     return Hair();
-  } else if(category.name == 'Body Care') {
+  } else if(category.category == 'Body Care') {
     return BodyCare();
-  } else if(category.name == 'Make Up') {
+  } else if(category.category == 'Make Up') {
     return MakeUp();
-  } else if(category.name == 'Nails'){
+  } else if(category.category == 'Nails'){
     return Nails();
   } 
 

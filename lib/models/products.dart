@@ -29,6 +29,45 @@ class ProductItem {
 }
 
 final List<ProductItem> productItems = [
+
+    ProductItem(
+      id : 1,
+      title: 'MakeUp Brushes',
+      description: 'Our products are the best',
+      price: 750.0,
+      discountPercentage: 20,
+      rating: 4,
+      stock: 21,
+      category: 'New',
+      subCategory: 'Moisteurizer',
+      images: 'assets/images/makeup1.jpg',
+      slideImages: [
+      'assets/images/makeup1.jpg',
+      'assets/images/makeup1.jpg',
+      'assets/images/makeup1.jpg',
+    ],
+  ),
+
+    ProductItem(
+      id : 1,
+      title: 'MakeUp Brushes',
+      description: 'Our products are the best',
+      price: 750.0,
+      discountPercentage: 20,
+      rating: 4,
+      stock: 21,
+      category: 'Trending',
+      subCategory: 'Moisteurizer',
+      images: 'assets/images/makeup1.jpg',
+      slideImages: [
+      'assets/images/makeup1.jpg',
+      'assets/images/makeup1.jpg',
+      'assets/images/makeup1.jpg',
+    ],
+  ),
+
+
+
     ProductItem(
       id : 1,
       title: 'MakeUp Brushes',
@@ -45,10 +84,7 @@ final List<ProductItem> productItems = [
       'assets/images/makeup1.jpg',
       'assets/images/makeup1.jpg',
     ],
-
-
-      
-    ),
+  ),
 
 
     ProductItem(
@@ -78,7 +114,7 @@ final List<ProductItem> productItems = [
       rating: 4,
       stock: 18,
       subCategory: 'Spray',
-      category: 'Hair',
+      category: 'Nails',
       images: 'assets/images/shop-new-14.png',
       slideImages: [
       'assets/images/shop-new-14.png',
@@ -96,7 +132,7 @@ final List<ProductItem> productItems = [
       rating: 4,
       stock: 21,
       subCategory: 'Sunscreen',
-      category: 'Hair',
+      category: 'Body Care',
       images: 'assets/images/shop-new-24.png',
       slideImages: [
       'assets/images/shop-new-24.png',
@@ -114,7 +150,7 @@ final List<ProductItem> productItems = [
       rating: 4,
       stock: 2,
       subCategory: 'Spray',
-      category: 'Hair',
+      category: 'Make Up',
       images: 'assets/images/shop-new-21.png',
       slideImages: [
       'assets/images/shop-new-21.png',
@@ -123,22 +159,6 @@ final List<ProductItem> productItems = [
     ],
     ),
 
-    ProductItem(
-      id : 4,
-      title: 'LUKE MOISTURIZING',
-      description: 'Our products are the best',
-      price: 750.0,
-      discountPercentage: 20,
-      rating: 4,
-      stock: 15,
-      subCategory: 'Spray',
-      category: 'Hair',
-      images: 'assets/images/shop-new-22.png',
-      slideImages: [
-      'assets/images/shop-new-22.png',
-      'assets/images/shop-new-22.png',
-      'assets/images/shop-new-22.png',
-    ],
-    ),
+    
 
 ];
