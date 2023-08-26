@@ -33,8 +33,8 @@ class _WebGridViewState extends State<WebGridView> {
         Provider.of<SubcategoryProvider>(context).filteredProducts;
 
 
-    return Expanded(
-          flex: 4,
+    return Container(
+          //flex: 4,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
