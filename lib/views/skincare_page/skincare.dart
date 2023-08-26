@@ -53,6 +53,7 @@ class _SkinCareState extends State<SkinCare> {
                       //WebSideView(),
                       //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (Responsive.isDesktop(context))
                           Container(
