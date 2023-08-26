@@ -27,12 +27,12 @@ class _MobNavMenuState extends State<MobNavMenu> {
     return Container(
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: brand.length,
+        itemCount: productItems.length,
         itemBuilder: (context, index) {
           return InkWell(
             onTap: (){},
-            child: ListTile(
-              title: Text(brand[index].name),
+            child: ExpansionTile(
+              title: Text(productItems[index].category),
             
             ),
           );
