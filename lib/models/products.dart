@@ -30,6 +30,8 @@ class ProductItem {
 
 final List<ProductItem> productItems = [
 
+  
+
     ProductItem(
       id : 1,
       title: 'MakeUp Brushes',
@@ -38,7 +40,7 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 21,
-      category: 'New',
+      category: 'Home',
       subCategory: 'Moisteurizer',
       images: 'assets/images/makeup1.jpg',
       slideImages: [

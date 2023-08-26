@@ -19,72 +19,39 @@ class MakeUp extends StatefulWidget {
 class _MakeUpState extends State<MakeUp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Column(
+          //mainAxisSize: MainAxisSize.max,
 
-      drawer: Drawer(
-        child: ListView(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            DrawerHeader(
-              child: Center(
-                child: Text(
-                  "",
-                  style: bheadings,
-                ),
-              ),
-            ),
-            MobNavMenu()
-          ],
-        ),
-      ),
-
-      body: Container(
-        child: Column(
-          children: [
-            //header
-            HeaderContainer(),
-            Expanded(
-              child: SingleChildScrollView(
-                child: SafeArea(
-                  child: Column(
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: [
-                      //WebSideView(),
-                      //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          if (Responsive.isDesktop(context))
-                          Expanded(child: WebSideView()),
-                          Expanded(
-                            flex: 4,
-                            child: ResponsiveGrid())
-                        ],
-                      ),
-                      NewsLetter(),
-                      Footer()
-                      //CheckboxExample()
-                  
-                      //Responsive.isDesktop(context) ? SideMenuView() : MobSideView(),
-                      //body
-                      //BodyContainer(),
+          children: [         
+            Column(
+              //mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+      
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+      
+                    Expanded(child: WebSideView()),
+                    
                       
-                      
-                      //footer
-                      //SizedBox(
-                        //height: 30,
-                      //),
-                      //Footer(),
-                      //now we make our website responsive
-                    ],
-                  ),
+                    Expanded(
+                      flex: 4,
+                      child: ResponsiveGrid())
+                       
+                  ],
                 ),
-              ),
+                NewsLetter(),
+                Footer()
+        
+                
+              ],
             ),
-          ],
-        ),
-      ),
-
+    
+          ]
+        
+        
+      
     );
   }
 }

@@ -59,11 +59,11 @@ class Header extends StatelessWidget {
           ],
         ),
 
-        if (Responsive.isDesktop(context)) Container(
-            width: double.infinity,
-            color: Colors.black,
-            child:  WebNavMenu(),
-        ),      
+        // if (Responsive.isDesktop(context)) Container(
+        //     width: double.infinity,
+        //     color: Colors.black,
+        //     child:  WebNavMenu(),
+        // ),      
       ],
     );
 

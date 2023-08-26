@@ -6,6 +6,7 @@ import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
 import 'package:mpanies_app/views/home_page/widgets/searchbar.dart';
 import 'package:mpanies_app/views/home_page/widgets/trending_products.dart';
 import 'package:mpanies_app/views/cart_page/widgets/products_container.dart';
+import 'package:mpanies_app/views/pageViewer.dart';
 //import 'package:mpanies_app/widgets/slider.dart';
 
 import '../../models/new.dart';
@@ -30,40 +31,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     //final Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      
-      drawer: Drawer(
-        child: ListView(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            DrawerHeader(
-              child: Center(
-                child: Text(
-                  "",
-                  style: bheadings,
-                ),
-              ),
-            ),
-            MobNavMenu()
-          ],
-        ),
-      ),
-
-      body: Container(
+    return Container(
         child: Column(
           children: [
-            //header
-            HeaderContainer(),
-            
-            
-            //DrawerWidget(),
-            //RoundSearchIcon(),
-            Expanded(
-              child: SingleChildScrollView(
-                child: SafeArea(
-                  child: Column(
-                    // ignore: prefer_const_literals_to_create_immutables
-                    children: [
+            //heade
                       
                   
                       Responsive.isDesktop(context) ? webBanner() : MobBanner(),
@@ -75,20 +46,11 @@ class _HomeState extends State<Home> {
                       Footer(),
                       
                       
-                      //footer
-                      //SizedBox(
-                        //height: 30,
-                      //),
-                      //Footer(),
-                      //now we make our website responsive
+                      
                     ],
                   ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+                
+      
               
 
     );

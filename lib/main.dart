@@ -15,8 +15,10 @@ import 'package:mpanies_app/views/makeup_page/makeup.dart';
 import 'package:mpanies_app/views/nails_page/nails.dart';
 import 'package:mpanies_app/views/new_page/new.dart';
 import 'package:mpanies_app/views/orders_page/ordersScreen.dart';
+import 'package:mpanies_app/views/pageViewer.dart';
 import 'package:mpanies_app/views/register_page/register_screen.dart';
 import 'package:mpanies_app/views/skincare_page/skincare.dart';
+import 'package:mpanies_app/views/skincare_page/widgets/gridview.dart';
 import 'package:mpanies_app/views/trending_page/trending.dart';
 import 'package:provider/provider.dart';
 
@@ -53,22 +55,24 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //home: Home()
-      initialRoute: PageStateManager.initialRoute, // Set the initial route
-      routes: {
-        '/': (context) => Home(), // Home screen
-        '/bodyCare': (context) => BodyCare(), // body care Page
-        '/new': (context) => New(), // new Page
-        '/trending': (context) => TrendingProduct(), // Trending Product Page
-        '/skincare': (context) => SkinCare(), // Skin care Page
-        '/hair': (context) => Hair(), // hair Page
-        '/makeup': (context) => MakeUp(), // makeup page
-        '/nails': (context) => Nails(), // nails Page
-        '/checkout': (context) => Checkout(), // Checkout Page
-        '/orders': (context) => OrdersScreen(), // orders Page
-        '/login': (context) => LoginScreen(), // login page
-        '/register': (context) => RegisterScreen(), // register page
-      },
+      home: TopBar()
+      
+      //initialRoute: PageStateManager.initialRoute, // Set the initial route
+      // routes: {
+      //   '/': (context) => Home(), // Home screen
+      //   '/bodyCare': (context) => BodyCare(), // body care Page
+      //   '/new': (context) => New(), // new Page
+      //   '/trending': (context) => TrendingProduct(), // Trending Product Page
+      //   '/skincare': (context) => SkinCare(), // Skin care Page
+      //   '/hair': (context) => Hair(), // hair Page
+      //   '/makeup': (context) => MakeUp(), // makeup page
+      //   '/nails': (context) => Nails(), // nails Page
+      //   '/checkout': (context) => Checkout(), // Checkout Page
+      //   '/orders': (context) => OrdersScreen(), // orders Page
+      //   '/login': (context) => LoginScreen(), // login page
+      //   '/register': (context) => RegisterScreen(), // register page
+      //   '/webgridview':(context) => ResponsiveGrid(),
+      // },
     );
   }
 }

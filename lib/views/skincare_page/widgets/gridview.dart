@@ -149,20 +149,22 @@ class _ResponsiveGridState extends State<ResponsiveGrid> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
 
-    return Container(
-      child: Responsive(
-        mobile: WebGridView(
-          crossAxisCount: size.width < 650 ? 2 : 4,
-          childAspectRatio: size.width < 650 ? 2 : 2.3,
-        ),
-        tablet: WebGridView(
-          crossAxisCount: size.width < 900 ? 3 : 4,
-          childAspectRatio: size.width < 900 ? 2.5 : 1.5,
-        ),
-        desktop: WebGridView(
-          crossAxisCount: size.width < 1400 ? 4 : 5,
-          childAspectRatio: size.width < 1400 ? 2.3 : 2.1,
-          
+    return Material(
+      child: Container(
+        child: Responsive(
+          mobile: WebGridView(
+            crossAxisCount: size.width < 650 ? 2 : 4,
+            childAspectRatio: size.width < 650 ? 2 : 2.3,
+          ),
+          tablet: WebGridView(
+            crossAxisCount: size.width < 900 ? 3 : 4,
+            childAspectRatio: size.width < 900 ? 2.5 : 1.5,
+          ),
+          desktop: WebGridView(
+            crossAxisCount: size.width < 1400 ? 4 : 5,
+            childAspectRatio: size.width < 1400 ? 2.3 : 2.1,
+            
+          ),
         ),
       ),
     );

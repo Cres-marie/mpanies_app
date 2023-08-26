@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/categoryProvider.dart';
 import 'package:mpanies_app/models/products.dart';
+import 'package:mpanies_app/subCategoryProvider.dart';
 import 'package:mpanies_app/views/bodycare_page/bodyCare.dart';
 import 'package:mpanies_app/views/hair_page/hair.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
 import 'package:mpanies_app/views/makeup_page/makeup.dart';
 import 'package:mpanies_app/views/nails_page/nails.dart';
+import 'package:mpanies_app/views/skincare_page/widgets/gridview.dart';
 import 'package:mpanies_app/views/trending_page/trending.dart';
 import 'package:mpanies_app/widgets/hoverWidget.dart';
 import 'package:provider/provider.dart';
@@ -29,10 +31,44 @@ class _MobNavMenuState extends State<MobNavMenu> {
         shrinkWrap: true,
         itemCount: productItems.length,
         itemBuilder: (context, index) {
+          final category = productItems[index].category;
+          final subcategories = productItems
+              .where((item) => item.category == category)
+              .map((item) => item.subCategory)
+              .toSet()
+              .toList();
           return InkWell(
             onTap: (){},
             child: ExpansionTile(
-              title: Text(productItems[index].category),
+              title: Text(category),
+              children: [
+              ListView.builder(
+                shrinkWrap: true,
+                itemCount: subcategories.length,
+                itemBuilder: (context, subIndex) {
+                  return InkWell(
+                    onTap: () {
+   
+                    },
+                    child: ListTile(
+                      title: Text(subcategories[subIndex]),
+                      onTap: () {
+                        print('tapped');
+                        // Handle subcategory selection
+                        Provider.of<SubcategoryProvider>(context, listen: false)
+                            .setSelectedSubcategory(subcategories[subIndex]);
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ResponsiveGrid(),
+                        ),
+                      );
+                      },
+                    ),
+                  );
+                },
+              ),
+            ],
             
             ),
           );
