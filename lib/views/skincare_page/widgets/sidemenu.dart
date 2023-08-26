@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/categoryProvider.dart';
 import 'package:mpanies_app/models/products.dart';
 import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/filters.dart';
@@ -15,28 +16,43 @@ class WebSideView extends StatefulWidget {
 }
 
 class _WebSideViewState extends State<WebSideView> {
+
+  
   @override
   Widget build(BuildContext context) {
-    return 
-      Container(
+    
+    final selectedCategory =
+        Provider.of<CategoryProvider>(context).selectedCategory;
+
+
+    print('Selected Category: $selectedCategory');
+
+    final filteredSubcategories = productItems
+        .where((item) => item.category == selectedCategory)
+        .map((item) => item.subCategory)
+        .toSet()
+        .toList();
+
+    return Container(
             margin: EdgeInsets.only(right: 40, top: 50, left: 10) ,
             child: Column(
               //crossAxisAlignment: CrossAxisAlignment.start,
-              children: [  
+              children: [ 
+        
                 ListTile(
                   title: Text('Product Types', style: sideheadings,),
                 ),                      
                 ListView.builder(
                   shrinkWrap: true,
-                  itemCount: productItems.length,
+                  itemCount: filteredSubcategories.length,
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: (){
                         Provider.of<SubcategoryProvider>(context, listen: false)
-                      .setSelectedSubcategory(productItems[index].subCategory);
+                      .setSelectedSubcategory(filteredSubcategories[index]);
                       },
                       child: ListTile(
-                        title: Text(productItems[index].subCategory),
+                        title: Text(filteredSubcategories[index]),
                         // Add onTap if you want to handle item clicks
                       ),
                     );

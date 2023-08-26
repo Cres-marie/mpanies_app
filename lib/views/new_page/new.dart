@@ -52,6 +52,7 @@ class _NewState extends State<New> {
                       //WebSideView(),
                       //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (Responsive.isDesktop(context))
                           Expanded(child: WebSideView()),

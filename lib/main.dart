@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:mpanies_app/categoryProvider.dart';
 import 'package:mpanies_app/models/trending.dart';
 import 'package:mpanies_app/subCategoryProvider.dart';
 import 'package:mpanies_app/utils/pageStateManager.dart';
@@ -22,10 +23,20 @@ import 'package:provider/provider.dart';
 Future<void> main() async {
   await PageStateManager.init();
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => SubcategoryProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CategoryProvider>(
+          create: (context) => CategoryProvider(),
+        ),
+        ChangeNotifierProvider<SubcategoryProvider>(
+          create: (context) => SubcategoryProvider(),
+        ),
+      ],
+
       child: MyApp(),
-    ),
+      
+    )
+    
 
   );
 }

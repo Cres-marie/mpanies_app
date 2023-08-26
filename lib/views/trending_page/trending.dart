@@ -52,6 +52,7 @@ class _TrendingProductState extends State<TrendingProduct> {
                       //WebSideView(),
                       //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (Responsive.isDesktop(context))
                           Expanded(child: WebSideView()),

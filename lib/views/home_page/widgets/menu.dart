@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/categoryProvider.dart';
 import 'package:mpanies_app/models/products.dart';
 import 'package:mpanies_app/views/bodycare_page/bodyCare.dart';
 import 'package:mpanies_app/views/hair_page/hair.dart';
@@ -7,6 +8,7 @@ import 'package:mpanies_app/views/makeup_page/makeup.dart';
 import 'package:mpanies_app/views/nails_page/nails.dart';
 import 'package:mpanies_app/views/trending_page/trending.dart';
 import 'package:mpanies_app/widgets/hoverWidget.dart';
+import 'package:provider/provider.dart';
 import '../../../models/categories';
 import '../../../models/trending.dart';
 import '../../new_page/new.dart';
@@ -67,6 +69,8 @@ class _WebNavMenuState extends State<WebNavMenu> {
                   context,
                   MaterialPageRoute(builder: (context) => getPageForCategory(category)),
                 );
+                Provider.of<CategoryProvider>(context, listen: false)
+                    .setSelectedCategory(category.category);
               },
               size: 18.0,
             ),

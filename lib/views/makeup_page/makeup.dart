@@ -52,6 +52,7 @@ class _MakeUpState extends State<MakeUp> {
                       //WebSideView(),
                       //Responsive.isDesktop(context) ? WebSideView() : MobSideView(),
                       Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           if (Responsive.isDesktop(context))
                           Expanded(child: WebSideView()),

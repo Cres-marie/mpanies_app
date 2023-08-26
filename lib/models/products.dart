@@ -49,7 +49,7 @@ final List<ProductItem> productItems = [
   ),
 
     ProductItem(
-      id : 1,
+      id : 2,
       title: 'MakeUp Brushes',
       description: 'Our products are the best',
       price: 750.0,
@@ -69,7 +69,7 @@ final List<ProductItem> productItems = [
 
 
     ProductItem(
-      id : 1,
+      id : 3,
       title: 'MakeUp Brushes',
       description: 'Our products are the best',
       price: 750.0,
@@ -88,7 +88,7 @@ final List<ProductItem> productItems = [
 
 
     ProductItem(
-      id : 2,
+      id : 4,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -106,7 +106,7 @@ final List<ProductItem> productItems = [
     ),
 
     ProductItem(
-      id : 3,
+      id : 5,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -124,7 +124,7 @@ final List<ProductItem> productItems = [
     ),
 
     ProductItem(
-      id : 4,
+      id : 6,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
@@ -142,7 +142,7 @@ final List<ProductItem> productItems = [
     ),
 
     ProductItem(
-      id : 4,
+      id : 7,
       title: 'LUKE MOISTURIZING',
       description: 'Our products are the best',
       price: 750.0,
