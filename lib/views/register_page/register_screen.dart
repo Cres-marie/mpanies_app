@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
 import 'package:mpanies_app/views/register_page/widgets/register_field.dart';
@@ -30,7 +31,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
           width: 180,
           child: Transform.scale(
             scale: 1.2,
-            child: Image.asset('assets/images/mpanies.png',))
+            child: SvgPicture.asset('assets/images/mpanies1.svg', height: 100, width: 180,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
+          )
         ),
       ),
 
@@ -73,8 +75,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     width: 400,
                     child: ElevatedHoverButton(
                         text: 'Sign Up',
-                        defaultColor: Colors.black,
-                        hoverColor: k2SecondaryGold,
+                        
                         onTap: () {
                            Navigator.pushNamed(context, '/');
                            

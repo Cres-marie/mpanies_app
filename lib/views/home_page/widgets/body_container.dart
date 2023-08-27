@@ -14,7 +14,7 @@ class _BodyContainerState extends State<BodyContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: kTertiaryPeach,
+      color: buttonColor2,
       width: double.infinity,
       child: Container(
         padding: EdgeInsets.all(60),

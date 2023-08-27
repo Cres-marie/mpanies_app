@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
 import 'package:mpanies_app/views/home_page/widgets/person.dart';
 import 'package:mpanies_app/views/home_page/widgets/searchbar.dart';
@@ -31,6 +32,8 @@ class Header extends StatelessWidget {
                 },
               icon: Icon(Icons.menu, color: Colors.black,))
             ),
+
+
             
             InkWell(
               onTap: () {
@@ -39,7 +42,11 @@ class Header extends StatelessWidget {
                 MaterialPageRoute(builder: (context)=> Home())
                 );
               },
-              child: Image.asset('assets/images/rsz_mpanies.png', height: 100, width: 180,color: Colors.black,)
+              child: Container(
+                margin: const EdgeInsets.all(8.0),
+                child: SvgPicture.asset('assets/images/mpanies1.svg', height: 100, width: 180,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
+              )
+              //Image.asset('assets/images/rsz_mpanies.png', height: 100, width: 180,color: Colors.black,)
             ),
             Spacer(),
             

@@ -186,16 +186,16 @@ class _PaymentOptionsHoverState extends State<PaymentOptionsHover> {
 
 class ElevatedHoverButton extends StatefulWidget {
   final String? text;
-  final Color defaultColor;
-  final Color hoverColor;
+  //final Color defaultColor;
+  //final Color hoverColor;
   final VoidCallback? onTap;
   final IconData? icon;
 
   const ElevatedHoverButton({
     Key? key,
     this.text,
-    required this.defaultColor,
-    required this.hoverColor,
+    //required this.defaultColor,
+    //required this.hoverColor,
     this.onTap,
     this.icon,
   }) : super(key: key);
@@ -223,7 +223,7 @@ class _ElevatedHoverButtonState extends State<ElevatedHoverButton> {
       child: ElevatedButton(
         onPressed: widget.onTap,
         style: ElevatedButton.styleFrom(
-          primary: isHovered ? widget.hoverColor : widget.defaultColor,
+          backgroundColor: isHovered ? k2SecondaryGold: buttonColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4.0),
           ),

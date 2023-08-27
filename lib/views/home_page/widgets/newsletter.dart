@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:mpanies_app/widgets/hoverWidget.dart';
 
 import '../../../utils/constants.dart';
 
@@ -19,7 +20,7 @@ class _NewsLetterState extends State<NewsLetter> {
         children: [
           Container(
             padding: bpadding,
-            color: kTertiaryPeach,
+            color: buttonColor2,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height/2.0,
             child: Column(
@@ -52,17 +53,19 @@ class _NewsLetterState extends State<NewsLetter> {
                     ),
                     SizedBox(width: 20,),
                     Container(
-                      height: 40,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.black,
+                        height: 40,
+                        width: 140,
+                        child: ElevatedHoverButton(
+                          text: 'Submit',
+                          
+                          onTap: () {
+                            
+                          },
+                          //icon: Icons.shopping_bag,
+
                         ),
-                        onPressed: () {
-                          // Add your submission logic here
-                        },
-                        child: Text('Submit'),
-                      ),
-                    ),
+                      )
+                    
                   ],
                 ),
               ],

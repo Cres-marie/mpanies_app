@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:mpanies_app/categoryProvider.dart';
 import 'package:mpanies_app/models/products.dart';
+import 'package:mpanies_app/models/responsive.dart';
 import 'package:mpanies_app/subCategoryProvider.dart';
+import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/views/bodycare_page/bodyCare.dart';
 import 'package:mpanies_app/views/hair_page/hair.dart';
 import 'package:mpanies_app/views/home_page/home.dart';
+import 'package:mpanies_app/views/home_page/widgets/footer.dart';
+import 'package:mpanies_app/views/home_page/widgets/header_container.dart';
+import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
 import 'package:mpanies_app/views/makeup_page/makeup.dart';
 import 'package:mpanies_app/views/nails_page/nails.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/gridview.dart';
+import 'package:mpanies_app/views/skincare_page/widgets/sidemenu.dart';
 import 'package:mpanies_app/views/trending_page/trending.dart';
 import 'package:mpanies_app/widgets/hoverWidget.dart';
 import 'package:provider/provider.dart';
@@ -60,7 +66,56 @@ class _MobNavMenuState extends State<MobNavMenu> {
                         Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ResponsiveGrid(),
+                          builder: (context) => Material(
+                            child: Scaffold(
+
+                              drawer: Drawer(
+                                child: ListView(
+                                  children: [
+                                    DrawerHeader(
+                                      child: Center(
+                                        child: Text(
+                                          "",
+                                          style: bheadings,
+                                        ),
+                                      ),
+                                    ),
+                                    MobNavMenu()
+                                  ],
+                                ),
+                              ),
+
+                              body: Column(
+                                children: [
+                                  HeaderContainer(),
+                                  Expanded(
+                                    child: SingleChildScrollView(
+                                      child: Column(
+                                        children: [
+                                          Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                        
+                                              if (Responsive.isDesktop(context))
+                                                Expanded(child: WebSideView()),                          
+                            
+                                              Expanded(
+                                                flex: 4,
+                                                child: ResponsiveGrid()
+                                              )
+                             
+                                            ],
+                                          ),
+                                          NewsLetter(),
+                                          Footer()
+                                        ],
+                                      )
+                                    )
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
                         ),
                       );
                       },

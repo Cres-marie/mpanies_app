@@ -55,24 +55,24 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home()
+      //home: Home()
       
-      //initialRoute: PageStateManager.initialRoute, // Set the initial route
-      // routes: {
-      //   '/': (context) => Home(), // Home screen
-      //   '/bodyCare': (context) => BodyCare(), // body care Page
-      //   '/new': (context) => New(), // new Page
-      //   '/trending': (context) => TrendingProduct(), // Trending Product Page
-      //   '/skincare': (context) => SkinCare(), // Skin care Page
-      //   '/hair': (context) => Hair(), // hair Page
-      //   '/makeup': (context) => MakeUp(), // makeup page
-      //   '/nails': (context) => Nails(), // nails Page
-      //   '/checkout': (context) => Checkout(), // Checkout Page
-      //   '/orders': (context) => OrdersScreen(), // orders Page
-      //   '/login': (context) => LoginScreen(), // login page
-      //   '/register': (context) => RegisterScreen(), // register page
-      //   '/webgridview':(context) => ResponsiveGrid(),
-      // },
+      initialRoute: PageStateManager.initialRoute, // Set the initial route
+      routes: {
+        '/': (context) => Home(), // Home screen
+        '/bodyCare': (context) => BodyCare(), // body care Page
+        '/new': (context) => New(), // new Page
+        '/trending': (context) => TrendingProduct(), // Trending Product Page
+        '/skincare': (context) => SkinCare(), // Skin care Page
+        '/hair': (context) => Hair(), // hair Page
+        '/makeup': (context) => MakeUp(), // makeup page
+        '/nails': (context) => Nails(), // nails Page
+        '/checkout': (context) => Checkout(), // Checkout Page
+        '/orders': (context) => OrdersScreen(), // orders Page
+        '/login': (context) => LoginScreen(), // login page
+        '/register': (context) => RegisterScreen(), // register page
+        '/webgridview':(context) => ResponsiveGrid(),
+      },
     );
   }
 }

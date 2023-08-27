@@ -33,14 +33,14 @@ class _ShoppingBagState extends State<ShoppingBag> {
       },
       child: Stack(
         children: [
-          Icon(Icons.shopping_bag_outlined, size: 30, color: isClicked ? k2SecondaryGold : Colors.black, ),          
+          Icon(Icons.shopping_bag_outlined, size: 30, color: isClicked ? k2SecondaryGold : buttonColor, ),          
           
           Positioned(
             top: 0, right: 0, // Adjust the position as needed
             child: Container(
               padding: EdgeInsets.all(4),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 73, 70, 69),
+                color: buttonColor,
                 shape: BoxShape.circle,
               ),
               child: Text('0',style: TextStyle(color: Colors.white),),

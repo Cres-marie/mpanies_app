@@ -72,8 +72,7 @@ class _OrdersContainerState extends State<OrdersContainer> {
                       //width: MediaQuery.of(context).size.width,
                       child: ElevatedHoverButton(
                         text: 'CheckOut',
-                        defaultColor: Colors.black,
-                        hoverColor: k2SecondaryGold,
+                        
                         onTap: () {
                           Navigator.of(context).pushReplacementNamed('/checkout');
                         },

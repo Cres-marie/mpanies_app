@@ -32,8 +32,7 @@ class _PersonIconState extends State<PersonIcon> {
                     width: 400,
                     child: ElevatedHoverButton(
                         text: 'Sign In',
-                        defaultColor: Colors.black,
-                        hoverColor: k2SecondaryGold,
+                        
                         onTap: () {
                           Navigator.of(context).pushNamed('/login');
                           
@@ -91,7 +90,7 @@ class _PersonIconState extends State<PersonIcon> {
           isClicked = true; // Set the color when the icon is clicked
         });
       },
-      child: Icon(Icons.person, size: 30, color: isClicked ? k2SecondaryGold : Colors.black,)
+      child: Icon(Icons.person, size: 30, color: isClicked ? k2SecondaryGold : buttonColor,)
                   
     );
         

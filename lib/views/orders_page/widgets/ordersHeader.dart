@@ -118,7 +118,7 @@ class OrdersHeader extends StatelessWidget {
         // Your onTap callback logic here
         Navigator.pop(context);
       },
-      buttonColor: Colors.black,
+      buttonColor: buttonColor,
       hoverColor: k2SecondaryGold,
       iconData: Icons.shopping_basket, // Add the icon you want to use
     );

@@ -152,8 +152,7 @@ class _PaymentfieldState extends State<Paymentfield> {
               height: 40,
               child: ElevatedHoverButton(
                   text: 'Pay \$750',
-                  defaultColor: Colors.black,
-                  hoverColor: k2SecondaryGold,
+                  
                   onTap: () {
                             // Navigator.push(
                             //   context,

@@ -25,7 +25,7 @@ class Footer extends StatelessWidget {
                   flex: 1,
                   child: Column(
                     children: [
-                      Image.asset('assets/images/mpanies.png', height: 100, width: 100, color: k2SecondaryGold ,),
+                      SvgPicture.asset('assets/images/mpanies1.svg', height: 100, width: 180,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -56,7 +56,7 @@ class Footer extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            if (!Responsive.isDesktop(context))   WebFooterMenu(),
+            if (!Responsive.isDesktop(context))   MobFooterMenu(),
           ],
         ),
       ),
@@ -209,108 +209,108 @@ class WebFooterMenu extends StatelessWidget {
   }
 }
 
-// class MobFooterMenu extends StatelessWidget {
-//   const MobFooterMenu({super.key});
+class MobFooterMenu extends StatelessWidget {
+  const MobFooterMenu({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       padding: EdgeInsets.only(left: 20),
-//       child: Wrap(   
-//         children: [          
-//           Column(
-//             //crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               ListTile(title:Text('STORE',style: fheadings, ),),
-//               SizedBox(height: 4,),
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.start,
-//                 children: [
-//                   Icon(Icons.place, color: Colors. white,),
-//                   HoverText(
-//                     text: 'Kampala\, Uganda',
-//                     onPressed: () {},
-//                     size: 16.0, 
-//                   )
-//                 ],
-//               ),
-//               SizedBox(height: 10,),
-//               Row(
-//                 children: [
-//                   Icon(Icons.schedule, color: Colors. white,),
-//                   HoverText(
-//                     text: '09:00am - 06:00pm',
-//                     onPressed: () {},
-//                     size: 16.0, 
-//                   )
-//                 ],
-//               )
-//             ],
-//           ),
-//           SizedBox(height: 10,),
-//           Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//               children: [
-//                 ListTile(title:Text('REACH US',style: fheadings, ),),
-//                 SizedBox(height: 4,),
-//                 Row(
-//                   children: [
-//                     Icon(Icons.phone, color: Colors. white,),
-//                     HoverText(
-//                       text: '(0000) 123-4789',
-//                       onPressed: () {},
-//                       size: 16.0, 
-//                     )
-//                   ],
-//                 ),
-//                 SizedBox(height: 10,),
-//                 Row(
-//                   children: [
-//                     Icon(Icons.email, color: Colors. white,),
-//                     HoverText(
-//                       text: 'info@example.com',
-//                       onPressed: () {},
-//                       size: 16.0, 
-//                     )
-//                   ],
-//                 )
-//               ],
-//             ),
-//           SizedBox(height: 15,),
-//           Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               ListTile(title:Text('INFO',style: fheadings, ),),
-//               SizedBox(height: 4,),
-//               Row(
-//                 children: [
-//                   Icon(Icons.keyboard_arrow_right, color: Colors. white,),
-//                   HoverText(
-//                     text: 'Contact',
-//                     onPressed: () {},
-//                     size: 16.0, 
-//                   )
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(left: 20),
+      child: Wrap(   
+        children: [          
+          Column(
+            //crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ListTile(title:Text('STORE',style: fheadings, ),),
+              SizedBox(height: 4,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Icon(Icons.place, color: Colors. white,),
+                  HoverText(
+                    text: 'Kampala\, Uganda',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
+                ],
+              ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
+                  Icon(Icons.schedule, color: Colors. white,),
+                  HoverText(
+                    text: '09:00am - 06:00pm',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
+                ],
+              )
+            ],
+          ),
+          SizedBox(height: 10,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                ListTile(title:Text('REACH US',style: fheadings, ),),
+                SizedBox(height: 4,),
+                Row(
+                  children: [
+                    Icon(Icons.phone, color: Colors. white,),
+                    HoverText(
+                      text: '(0000) 123-4789',
+                      onPressed: () {},
+                      size: 16.0, 
+                    )
+                  ],
+                ),
+                SizedBox(height: 10,),
+                Row(
+                  children: [
+                    Icon(Icons.email, color: Colors. white,),
+                    HoverText(
+                      text: 'info@example.com',
+                      onPressed: () {},
+                      size: 16.0, 
+                    )
+                  ],
+                )
+              ],
+            ),
+          SizedBox(height: 15,),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ListTile(title:Text('INFO',style: fheadings, ),),
+              SizedBox(height: 4,),
+              Row(
+                children: [
+                  Icon(Icons.keyboard_arrow_right, color: Colors. white,),
+                  HoverText(
+                    text: 'Contact',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
             
-//                 ],
-//               ),
-//               SizedBox(height: 10,),
-//               Row(
-//                 children: [
-//                   Icon(Icons.keyboard_arrow_right, color: Colors. white,),
-//                   HoverText(
-//                     text: 'Shipping & Returns',
-//                     onPressed: () {},
-//                     size: 16.0, 
-//                   )
+                ],
+              ),
+              SizedBox(height: 10,),
+              Row(
+                children: [
+                  Icon(Icons.keyboard_arrow_right, color: Colors. white,),
+                  HoverText(
+                    text: 'Shipping & Returns',
+                    onPressed: () {},
+                    size: 16.0, 
+                  )
 
-//                 ],
-//               )
-//             ],
-//           ),                      
-//         ],
-//       ),
-//     );
-//   }
-// }
+                ],
+              )
+            ],
+          ),                      
+        ],
+      ),
+    );
+  }
+}
 

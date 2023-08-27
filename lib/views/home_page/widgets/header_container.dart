@@ -18,8 +18,8 @@ class _HeaderContainerState extends State<HeaderContainer> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: k3TertiaryPale,
-      //padding: EdgeInsets.(8.0),
+      //color: k3TertiaryPale,
+      //padding: EdgeInsets.all(8.0),
       child: Column(
         children: [
           Container(

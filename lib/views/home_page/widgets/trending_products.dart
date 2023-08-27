@@ -132,8 +132,7 @@ class _ProductCardState extends State<ProductCard> {
                         width: 140,
                         child: ElevatedHoverButton(
                           text: 'Add To Bag',
-                          defaultColor: Colors.black,
-                          hoverColor: k2SecondaryGold,
+                          
                           onTap: () {
                             Navigator.push(
                               context,

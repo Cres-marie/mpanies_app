@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:mpanies_app/utils/constants.dart';
 import 'package:mpanies_app/utils/pageStateManager.dart';
 import 'package:mpanies_app/views/checkout_page/widgets/checkout_field.dart';
 import 'package:mpanies_app/views/checkout_page/widgets/ordersSummary.dart';
@@ -30,7 +32,8 @@ class _CheckoutState extends State<Checkout> {
           width: 180,
           child: Transform.scale(
             scale: 1.2,
-            child: Image.asset('assets/images/mpanies.png',))
+            child: SvgPicture.asset('assets/images/mpanies1.svg', height: 100, width: 180,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
+          )
         ),
       ),
       body: Container(

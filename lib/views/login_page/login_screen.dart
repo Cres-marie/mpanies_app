@@ -26,7 +26,8 @@ class LoginScreen extends StatelessWidget {
           width: 180,
           child: Transform.scale(
             scale: 1.2,
-            child: Image.asset('assets/images/mpanies.png',))
+            child: SvgPicture.asset('assets/images/mpanies1.svg', height: 100, width: 180,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
+          )
         ),
       ),
       body: Container(
@@ -66,8 +67,7 @@ class LoginScreen extends StatelessWidget {
                     width: 400,
                     child: ElevatedHoverButton(
                         text: 'Sign In',
-                        defaultColor: Colors.black,
-                        hoverColor: k2SecondaryGold,
+                       
                         onTap: () {
                            Navigator.pushNamed(context, '/');
                           
