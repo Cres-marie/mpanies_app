@@ -54,6 +54,7 @@ class _BodyCareState extends State<BodyCare> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                         
+                          if (Responsive.isDesktop(context))
                           Expanded(child: WebSideView()),
                           
                             

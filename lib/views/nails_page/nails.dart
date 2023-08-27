@@ -54,6 +54,7 @@ class _NailsState extends State<Nails> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                         
+                          if (Responsive.isDesktop(context))
                           Expanded(child: WebSideView()),
                           
                             

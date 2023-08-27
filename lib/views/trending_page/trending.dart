@@ -54,6 +54,7 @@ class _TrendingProductState extends State<TrendingProduct> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                         
+                          if (Responsive.isDesktop(context))
                           Expanded(child: WebSideView()),
                           
                             

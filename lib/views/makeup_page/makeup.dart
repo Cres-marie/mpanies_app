@@ -54,6 +54,7 @@ class _MakeUpState extends State<MakeUp> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                         
+                          if (Responsive.isDesktop(context))
                           Expanded(child: WebSideView()),
                           
                             
