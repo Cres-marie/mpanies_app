@@ -19,39 +19,64 @@ class MakeUp extends StatefulWidget {
 class _MakeUpState extends State<MakeUp> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-          //mainAxisSize: MainAxisSize.max,
+    return Scaffold(
 
-          children: [         
-            Column(
-              //mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-      
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-      
-                    Expanded(child: WebSideView()),
-                    
-                      
-                    Expanded(
-                      flex: 4,
-                      child: ResponsiveGrid())
-                       
-                  ],
+
+      drawer: Drawer(
+        child: ListView(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            DrawerHeader(
+              child: Center(
+                child: Text(
+                  "",
+                  style: bheadings,
                 ),
-                NewsLetter(),
-                Footer()
-        
-                
-              ],
+              ),
             ),
-    
-          ]
-        
-        
+            MobNavMenu()
+          ],
+        ),
+      ),
+      body: Column(
+            mainAxisSize: MainAxisSize.max,
+
+            children: [   
+              HeaderContainer(),     
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                        
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                        
+                          Expanded(child: WebSideView()),
+                          
+                            
+                          Expanded(
+                            flex: 4,
+                            child: ResponsiveGrid())
+                             
+                        ],
+                      ),
+                      NewsLetter(),
+                      Footer()
+                          
+                      
+                    ],
+                  ),
+                ),
+              ),
       
+            ]
+          
+          
+        
+      ),
     );
   }
 }

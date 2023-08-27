@@ -31,28 +31,58 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     //final Size size = MediaQuery.of(context).size;
-    return Container(
-        child: Column(
-          children: [
-            //heade
-                      
-                  
-                      Responsive.isDesktop(context) ? webBanner() : MobBanner(),
-                      //body
-                      BodyContainer(),
-                      NewArrival(),
-                      TrendingProducts(),
-                      NewsLetter(),
-                      Footer(),
-                      
-                      
-                      
-                    ],
-                  ),
-                
-      
-              
+    return Scaffold(
 
+      drawer: Drawer(
+        child: ListView(
+          // ignore: prefer_const_literals_to_create_immutables
+          children: [
+            DrawerHeader(
+              child: Center(
+                child: Text(
+                  "",
+                  style: bheadings,
+                ),
+              ),
+            ),
+            MobNavMenu()
+          ],
+        ),
+      ),
+
+      body: Container(
+          child: Column(
+            children: [
+              //heade
+              HeaderContainer(),
+                        ///Expanded(child: TopBar()),
+                        //TopBar(),                    
+                        Expanded(
+                          child: SingleChildScrollView(
+                            child: Column(
+                              children: [
+                                Responsive.isDesktop(context) ? webBanner() : MobBanner(),
+                              
+                            //body
+                            BodyContainer(),
+                            NewArrival(),
+                            TrendingProducts(),
+                            NewsLetter(),
+                            Footer(),
+                            
+                            ],
+                            ),
+                          ),
+                        ),
+                        
+                        
+                      ],
+                    ),
+                  
+        
+                
+    
+      ),
     );
   }
 }

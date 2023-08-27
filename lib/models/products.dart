@@ -40,7 +40,7 @@ final List<ProductItem> productItems = [
       discountPercentage: 20,
       rating: 4,
       stock: 21,
-      category: 'Home',
+      category: 'New',
       subCategory: 'Moisteurizer',
       images: 'assets/images/makeup1.jpg',
       slideImages: [

@@ -23,7 +23,8 @@ class TopBar extends StatefulWidget {
 }
 
 class _TopBarState extends State<TopBar> {
-  int _selectedIndex = 0;
+  int _selectedIndex = -1;
+  bool _showBodyContent = false;
 
   
 
@@ -35,7 +36,7 @@ class _TopBarState extends State<TopBar> {
 
   Future<void> _loadSelectedIndex() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    int storedIndex = prefs.getInt('selectedIndex') ?? 0;
+    int storedIndex = prefs.getInt('selectedIndex') ?? -1;
 
     setState(() {
       _selectedIndex = storedIndex;
@@ -47,11 +48,13 @@ class _TopBarState extends State<TopBar> {
     await prefs.setInt('selectedIndex', index);
     setState(() {
       _selectedIndex = index;
+      _showBodyContent = true;
+
     });
   }
 
   List<Widget> _categoryWidgets = [
-    Home(),
+    
     New(),
     TrendingProduct(),
     SkinCare(),
@@ -68,78 +71,46 @@ class _TopBarState extends State<TopBar> {
   Widget build(BuildContext context) {
 
     
-    return Scaffold(
-      appBar: null,
-      drawer: Drawer(
-        child: ListView(
-          // ignore: prefer_const_literals_to_create_immutables
+    return Column(
           children: [
-            DrawerHeader(
-              child: Center(
-                child: Text(
-                  "",
-                  style: bheadings,
-                ),
+            Container(
+              color: Colors.black,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  for (var index = 0; index < _categoryWidgets.length; index++)
+                  Container(
+                    margin: EdgeInsets.all(15),
+                    child: HoverText(
+                      text: productItems[index].category,
+                      onPressed: () {
+                        Provider.of<CategoryProvider>(context, listen: false)
+                      .setSelectedCategory(productItems[index].category);
+                        _updateSelectedIndex(index);
+                        
+                      },
+                      size: 18,
+                    ),
+                  ),
+                    
+                ],
               ),
             ),
-            Expanded(child: MobNavMenu())
-          ],
-        ),
-      ),
-
-      body: Column(
-        children: [
-          Header(),
-          if (Responsive.isDesktop(context)) 
-          Container(
-            color: Colors.black,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                for (var index = 0; index < _categoryWidgets.length- 1; index++)
-                Container(
-                  margin: EdgeInsets.all(15),
-                  child: HoverText(
-                    text: productItems[index].category,
-                    onPressed: () {
-                      Provider.of<CategoryProvider>(context, listen: false)
-                    .setSelectedCategory(productItems[index].category);
-                      _updateSelectedIndex(index);
-                      
-                    },
-                    size: 18,
+    
+              if (_showBodyContent)
+              Expanded(
+                child: SingleChildScrollView(
+                  child: IndexedStack(
+                    index: _selectedIndex,
+                    children: _categoryWidgets,
                   ),
                 ),
-                  
-              ],
-            ),
-          ),
-
-          
-            Expanded(
-              child: SingleChildScrollView(
-                child: IndexedStack(
-                  index: _selectedIndex,
-                  children: _categoryWidgets,
-                ),
               ),
-            ),
-          
-          
-        ],
-      ),
-    );
-  }
-}
-
-class YourNewPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      // Your page content goes here
-      child: Center(
-        child: Text('Your New Page'),
-      ),
+            
+            
+          ],
+        
+      
     );
   }
 }
