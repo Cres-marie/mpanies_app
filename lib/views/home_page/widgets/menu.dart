@@ -32,103 +32,107 @@ class MobNavMenu extends StatefulWidget {
 class _MobNavMenuState extends State<MobNavMenu> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ListView.builder(
-        shrinkWrap: true,
-        itemCount: productItems.length,
-        itemBuilder: (context, index) {
-          final category = productItems[index].category;
-          final subcategories = productItems
-              .where((item) => item.category == category)
-              .map((item) => item.subCategory)
-              .toSet()
-              .toList();
-          return InkWell(
-            onTap: (){},
-            child: ExpansionTile(
-              title: Text(category),
-              children: [
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: subcategories.length,
-                itemBuilder: (context, subIndex) {
-                  return InkWell(
-                    onTap: () {
+    return Column(
+      children: [
+        Container(
+          child: ListView.builder(
+            shrinkWrap: true,
+            itemCount: productItems.length,
+            itemBuilder: (context, index) {
+              final category = productItems[index].category;
+              final subcategories = productItems
+                  .where((item) => item.category == category)
+                  .map((item) => item.subCategory)
+                  .toSet()
+                  .toList();
+              return InkWell(
+                onTap: (){},
+                child: ExpansionTile(
+                  title: Text(category),
+                  children: [
+                  ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: subcategories.length,
+                    itemBuilder: (context, subIndex) {
+                      return InkWell(
+                        onTap: () {
    
-                    },
-                    child: ListTile(
-                      title: Text(subcategories[subIndex]),
-                      onTap: () {
-                        print('tapped');
-                        // Handle subcategory selection
-                        Provider.of<SubcategoryProvider>(context, listen: false)
-                            .setSelectedSubcategory(subcategories[subIndex]);
-                        Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => Material(
-                            child: Scaffold(
+                        },
+                        child: ListTile(
+                          title: Text(subcategories[subIndex]),
+                          onTap: () {
+                            print('tapped');
+                            // Handle subcategory selection
+                            Provider.of<SubcategoryProvider>(context, listen: false)
+                                .setSelectedSubcategory(subcategories[subIndex]);
+                            Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Material(
+                                child: Scaffold(
 
-                              drawer: Drawer(
-                                child: ListView(
-                                  children: [
-                                    DrawerHeader(
-                                      child: Center(
-                                        child: Text(
-                                          "",
-                                          style: bheadings,
+                                  drawer: Drawer(
+                                    child: ListView(
+                                      children: [
+                                        DrawerHeader(
+                                          child: Center(
+                                            child: Text(
+                                              "",
+                                              style: bheadings,
+                                            ),
+                                          ),
                                         ),
-                                      ),
+                                        MobNavMenu()
+                                      ],
                                     ),
-                                    MobNavMenu()
-                                  ],
+                                  ),
+
+                                  body: Column(
+                                    children: [
+                                      HeaderContainer(),
+                                      Expanded(
+                                        child: SingleChildScrollView(
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                children: [
+                            
+                                                  if (Responsive.isDesktop(context))
+                                                    Expanded(child: WebSideView()),                          
+                                
+                                                  Expanded(
+                                                    flex: 4,
+                                                    child: ResponsiveGrid()
+                                                  )
+                                 
+                                                ],
+                                              ),
+                                              NewsLetter(),
+                                              Footer()
+                                            ],
+                                          )
+                                        )
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-
-                              body: Column(
-                                children: [
-                                  HeaderContainer(),
-                                  Expanded(
-                                    child: SingleChildScrollView(
-                                      child: Column(
-                                        children: [
-                                          Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                        
-                                              if (Responsive.isDesktop(context))
-                                                Expanded(child: WebSideView()),                          
-                            
-                                              Expanded(
-                                                flex: 4,
-                                                child: ResponsiveGrid()
-                                              )
-                             
-                                            ],
-                                          ),
-                                          NewsLetter(),
-                                          Footer()
-                                        ],
-                                      )
-                                    )
-                                  ),
-                                ],
-                              ),
                             ),
-                          ),
+                          );
+                          },
                         ),
                       );
-                      },
-                    ),
-                  );
-                },
-              ),
-            ],
-            
-            ),
-          );
-        },
-      ),
+                    },
+                  ),
+                ],
+                
+                ),
+              );
+            },
+          ),
+        ),
+      ],
     );
   }
 }

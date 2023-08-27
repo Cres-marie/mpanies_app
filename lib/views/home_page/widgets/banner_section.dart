@@ -16,60 +16,64 @@ class _webBannerState extends State<webBanner> {
   Widget build(BuildContext context) {
     return Container(
       //color: Colors.,
-      child: CarouselSlider(
-        items: [
-          Container(
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.all(30),
-                  margin: EdgeInsets.only(left: 90),
-                  child: Image.asset(
-                    "assets/images/slider-1.png", width: 300,               
-                      fit: BoxFit.cover,
+      child: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+        return CarouselSlider(
+          items: [
+            Container(
+              child: Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(30),
+                    margin: EdgeInsets.only(left: 90),
+                    child: Image.asset(
+                      "assets/images/slider-1.png", width: 300,               
+                        fit: BoxFit.cover,
+                    ),
+                  ),                                
+                  SizedBox(width: 80,),
+                  Flexible(                  
+                    child: Container( 
+                      padding:EdgeInsets.only(right:120) ,
+                      child: AboutSection()
+                    )
                   ),
-                ),                                
-                SizedBox(width: 80,),
-                Flexible(                  
-                  child: Container( 
-                    padding:EdgeInsets.only(right:120) ,
-                    child: AboutSection()
-                  )
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-
-          Container(
-            child: Row(
-              children: [                      
-                //SizedBox(width: 20,),
-                Flexible(                  
-                  child: Container(
-                    padding: EdgeInsets.only(left: 90),
-                    child: AboutSection()
-                  )
-                ),
-                SizedBox(width: 80,),
-                Container(
-                  padding: EdgeInsets.only(right: 90),
-                  //margin: EdgeInsets.only(left: 60),
-                  child: Image.asset(
-                    "assets/images/slider-2.png", width: 400,                
-                      fit: BoxFit.cover,
+      
+            Container(
+              child: Row(
+                children: [                      
+                  //SizedBox(width: 20,),
+                  Flexible(                  
+                    child: Container(
+                      padding: EdgeInsets.only(left: 90),
+                      child: AboutSection()
+                    )
                   ),
-                ),          
-              ],
-            ),
-          )
-        ], 
-        options: CarouselOptions(
-          height: 500,
-          autoPlay: true,
-          aspectRatio: 1.0,
-          enlargeCenterPage: true,
-          viewportFraction: 1.0,
-        ), 
+                  SizedBox(width: 80,),
+                  Container(
+                    padding: EdgeInsets.only(right: 90),
+                    //margin: EdgeInsets.only(left: 60),
+                    child: Image.asset(
+                      "assets/images/slider-2.png", width: 400,                
+                        fit: BoxFit.cover,
+                    ),
+                  ),          
+                ],
+              ),
+            )
+          ], 
+          options: CarouselOptions(
+            height: 500,
+            autoPlay: true,
+            aspectRatio: 1.0,
+            enlargeCenterPage: true,
+            viewportFraction: 1.0,
+          ), 
+        );
+        }
       ),
     );
   }

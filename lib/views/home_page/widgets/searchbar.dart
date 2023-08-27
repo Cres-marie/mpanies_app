@@ -60,7 +60,7 @@ class _MobSearchIconState extends State<MobSearchIcon> {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: (){}, 
-      icon: Icon(Icons.search, color: Colors.black, size: 32)
+      icon: Icon(Icons.search, color: buttonColor, size: 32)
     );
   }
 }

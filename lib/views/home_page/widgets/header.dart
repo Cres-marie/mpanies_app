@@ -53,6 +53,8 @@ class Header extends StatelessWidget {
             _size.width > 650
                 ? WebSearchBar()
                 : MobSearchIcon(),
+
+            SizedBox(width: 10,),
             
             ShoppingBag(),
 
