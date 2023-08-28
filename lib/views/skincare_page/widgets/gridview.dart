@@ -52,7 +52,7 @@ class _WebGridViewState extends State<WebGridView> {
                 //height: 300,
                 child: GridView.builder(
                   shrinkWrap: true,
-                  //scrollDirection: Axis.vertical,
+                  scrollDirection: Axis.vertical,
                   physics: const ScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: widget.crossAxisCount , // Number of columns in the grid
@@ -63,8 +63,7 @@ class _WebGridViewState extends State<WebGridView> {
                   ),
                   itemCount: filteredProducts.length,
                   itemBuilder: (context, index) {
-                    return Container(
-                      
+                    return Container(                      
                       child: InkWell(
                         onTap: (){
                           Navigator.push(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_app/models/responsive.dart';
 import 'package:mpanies_app/views/cart_page/widgets/expansionList.dart';
 import 'package:mpanies_app/views/cart_page/widgets/productOptions.dart';
@@ -34,10 +35,7 @@ class _ProductPageState extends State<ProductPage> {
           children: [
             DrawerHeader(
               child: Center(
-                child: Text(
-                  "",
-                  style: bheadings,
-                ),
+                child: SvgPicture.asset('assets/images/mpanies1.svg', height: 80, width: 140,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
               ),
             ),
             MobNavMenu()

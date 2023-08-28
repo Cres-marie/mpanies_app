@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../models/responsive.dart';
 import '../../utils/constants.dart';
@@ -28,10 +29,7 @@ class _TrendingProductState extends State<TrendingProduct> {
           children: [
             DrawerHeader(
               child: Center(
-                child: Text(
-                  "",
-                  style: bheadings,
-                ),
+                child: SvgPicture.asset('assets/images/mpanies1.svg', height: 80, width: 140,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
               ),
             ),
             MobNavMenu()

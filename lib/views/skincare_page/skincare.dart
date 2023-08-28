@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_app/views/skincare_page/widgets/filters.dart';
 import 'package:mpanies_app/views/home_page/widgets/footer.dart';
 import 'package:mpanies_app/views/home_page/widgets/newsletter.dart';
@@ -29,10 +30,7 @@ class _SkinCareState extends State<SkinCare> {
           children: [
             DrawerHeader(
               child: Center(
-                child: Text(
-                  "",
-                  style: bheadings,
-                ),
+                child: SvgPicture.asset('assets/images/mpanies1.svg', height: 80, width: 140,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
               ),
             ),
             MobNavMenu()

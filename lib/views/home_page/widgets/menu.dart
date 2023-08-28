@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mpanies_app/categoryProvider.dart';
 import 'package:mpanies_app/models/products.dart';
 import 'package:mpanies_app/models/responsive.dart';
@@ -76,10 +77,7 @@ class _MobNavMenuState extends State<MobNavMenu> {
                                       children: [
                                         DrawerHeader(
                                           child: Center(
-                                            child: Text(
-                                              "",
-                                              style: bheadings,
-                                            ),
+                                            child: SvgPicture.asset('assets/images/mpanies1.svg', height: 80, width: 140,colorFilter: ColorFilter.mode(buttonColor, BlendMode.srcIn),),
                                           ),
                                         ),
                                         MobNavMenu()
