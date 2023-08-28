@@ -43,7 +43,7 @@ class _OrdersListTableState extends State<OrdersListTable> {
               elevation: 2,
               color: Colors.white,
               child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
+                //scrollDirection: Axis.horizontal,
                 child: PaginatedDataTable(
                   //header: Text('Category List'), // Display a header for the table
                   columns: [

@@ -41,6 +41,7 @@ class _CustomHeaderState extends State<CustomHeader> {
             fontWeight: FontWeight.bold,
           ),
         ),
+        SizedBox(width: 10,),
         Container(
           child: Row(
             children: [

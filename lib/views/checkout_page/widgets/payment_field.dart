@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mpanies_app/models/responsive.dart';
 import 'package:mpanies_app/views/checkout_page/widgets/dropdown.dart';
 
 import '../../../utils/constants.dart';
@@ -31,35 +32,38 @@ class _PaymentfieldState extends State<Paymentfield> {
             Text('2. Enter Payment Details', style: TextStyle(fontWeight: FontWeight.w500,fontSize: 20, )),
             SizedBox(height: 35,),
       
-            Row(
-              //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                PaymentOptionsHover(
-                  defaultColor: Colors.transparent, 
-                  hoverColor: kPrimaryColor,
-                  onTap: () {},
-                  child: SvgPicture.asset('assets/images/paypal.svg', height: 50, width:80) ,
-                ),
-                PaymentOptionsHover(
-                  defaultColor: Colors.transparent, 
-                  hoverColor: kPrimaryColor,
-                  onTap: () {},
-                  child: SvgPicture.asset('assets/images/visa.svg', height: 50, width:80) ,
-                ),
-                PaymentOptionsHover(
-                  defaultColor: Colors.transparent, 
-                  hoverColor: kPrimaryColor,
-                  onTap: () {},
-                  child: SvgPicture.asset('assets/images/mc.svg', height: 50, width:80) ,
-                ),
-                PaymentOptionsHover(
-                  defaultColor: Colors.transparent, 
-                  hoverColor: kPrimaryColor,
-                  onTap: () {},
-                  child: Image.asset('assets/images/D-Money.png', height: 50, width:80) ,
-                ),
-                
-              ],
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  PaymentOptionsHover(
+                    defaultColor: Colors.transparent, 
+                    hoverColor: kPrimaryColor,
+                    onTap: () {},
+                    child: SvgPicture.asset('assets/images/paypal.svg', height: 50, width:80) ,
+                  ),
+                  PaymentOptionsHover(
+                    defaultColor: Colors.transparent, 
+                    hoverColor: kPrimaryColor,
+                    onTap: () {},
+                    child: SvgPicture.asset('assets/images/visa.svg', height: 50, width:80) ,
+                  ),
+                  PaymentOptionsHover(
+                    defaultColor: Colors.transparent, 
+                    hoverColor: kPrimaryColor,
+                    onTap: () {},
+                    child: SvgPicture.asset('assets/images/mc.svg', height: 50, width:80) ,
+                  ),
+                  PaymentOptionsHover(
+                    defaultColor: Colors.transparent, 
+                    hoverColor: kPrimaryColor,
+                    onTap: () {},
+                    child: Image.asset('assets/images/D-Money.png', height: 50, width:80) ,
+                  ),
+                  
+                ],
+              ),
             ),
       
             Text('*Card Number', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
@@ -114,36 +118,42 @@ class _PaymentfieldState extends State<Paymentfield> {
       
             Text('*Expiry Date', style: TextStyle(fontWeight: FontWeight.w200,fontSize: 14, )),
             SizedBox(height: 10,),  
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.white
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 160,
+                    decoration: BoxDecoration(
+                      color: Colors.white
+                    ),
+                    child: MonthDropdownField(
+                      months: ['01', '02', '03', '04','05', '06', '07', '08','09', '10', '11', '12'],
+                      selectedMonth: null, 
+                      onChanged: (String? month) {},
+                      labelText: 'Select Month',
+                    )
                   ),
-                  child: MonthDropdownField(
-                    months: ['01', '02', '03', '04','05', '06', '07', '08','09', '10', '11', '12'],
-                    selectedMonth: null, 
-                    onChanged: (String? month) {},
-                    labelText: 'Select Month',
-                  )
-                ),
-                
-                Container(
-                  width: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.white
+            
+                  if (!Responsive.isDesktop(context))
+                  SizedBox(width: 10,),
+                  
+                  Container(
+                    width: 160,
+                    decoration: BoxDecoration(
+                      color: Colors.white
+                    ),
+                    child: MonthDropdownField(
+                      months: ['22', '23', '24', '25','26', '27', '28', '29','30', '31', '32', '33'],
+                      selectedMonth: null, 
+                      onChanged: (String? month) {},
+                      labelText: 'Select Year',
+                    )
                   ),
-                  child: MonthDropdownField(
-                    months: ['22', '23', '24', '25','26', '27', '28', '29','30', '31', '32', '33'],
-                    selectedMonth: null, 
-                    onChanged: (String? month) {},
-                    labelText: 'Select Year',
-                  )
-                ),
-      
-                ],
+                  
+                  ],
+              ),
             ),
       
             SizedBox(height: 20), 
