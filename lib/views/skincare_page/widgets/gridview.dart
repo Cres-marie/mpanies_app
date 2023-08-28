@@ -52,6 +52,8 @@ class _WebGridViewState extends State<WebGridView> {
                 //height: 300,
                 child: GridView.builder(
                   shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  physics: const ScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: widget.crossAxisCount , // Number of columns in the grid
                     crossAxisSpacing: 20, // Spacing between columns
