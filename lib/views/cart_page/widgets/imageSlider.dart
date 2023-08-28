@@ -70,7 +70,7 @@ class _ImageSliderState extends State<ImageSlider> {
                       SizedBox(
                         width: imageWidth < 723 ? imageWidth : 723,
                         height: 353,
-                        child: Image.network(
+                        child: Image.asset(
                           widget.images[_selectedIndex],
                         ),
                       ),
