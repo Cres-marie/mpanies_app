@@ -19,20 +19,24 @@ class _CountryPickerState extends State<CountryPicker> {
             //height: 600,
             
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 ///Adding CSC Picker Widget in app
-                CountryListPick(
-                  theme: CountryTheme(
-                    isShowFlag: true,
-                    isShowTitle: true,
-                    isShowCode: true,
-                    isDownIcon: true,
-                    showEnglishName: false,
-                    labelColor: Colors.blueAccent,
-                  ),
-                  initialSelection: '+256', //inital selection, +672 for Antarctica
-                  onChanged: (CountryCode? code) {},
-               ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: CountryListPick(
+                    theme: CountryTheme(
+                      isShowFlag: true,
+                      isShowTitle: true,
+                      isShowCode: true,
+                      isDownIcon: true,
+                      showEnglishName: false,
+                      labelColor: Colors.blueAccent,
+                    ),
+                    initialSelection: '+256', //inital selection, +672 for Antarctica
+                    onChanged: (CountryCode? code) {},
+                               ),
+                ),
                 
               ],
             )),
