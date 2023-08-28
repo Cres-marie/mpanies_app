@@ -42,19 +42,22 @@ class _OrdersListTableState extends State<OrdersListTable> {
             child: Card(
               elevation: 2,
               color: Colors.white,
-              child: PaginatedDataTable(
-                //header: Text('Category List'), // Display a header for the table
-                columns: [
-                  DataColumn(label: Text('Item')),       
-                  DataColumn(label: Text('Price')), 
-                  DataColumn(label: Text('Quantity')),    
-                  DataColumn(label: Text('Shipping Cost')),
-                  DataColumn(label: Text('Sub Total')),
-                ],
-                source: _OrdersDataTableSource(selectedRows, _updateSelectedRow),
-                rowsPerPage: myOrders.length > 6 ? 6 : myOrders.length, // Number of rows to display per page
-                 // Increase the height of data cells
-                dataRowMaxHeight: 140, 
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: PaginatedDataTable(
+                  //header: Text('Category List'), // Display a header for the table
+                  columns: [
+                    DataColumn(label: Text('Item')),       
+                    DataColumn(label: Text('Price')), 
+                    DataColumn(label: Text('Quantity')),    
+                    DataColumn(label: Text('Shipping Cost')),
+                    DataColumn(label: Text('Sub Total')),
+                  ],
+                  source: _OrdersDataTableSource(selectedRows, _updateSelectedRow),
+                  rowsPerPage: myOrders.length > 6 ? 6 : myOrders.length, // Number of rows to display per page
+                   // Increase the height of data cells
+                  dataRowMaxHeight: 140, 
+                ),
               ),
             ),
             
