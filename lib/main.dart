@@ -23,6 +23,7 @@ import 'package:mpanies_app/views/trending_page/trending.dart';
 import 'package:provider/provider.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await PageStateManager.init();
   runApp(
     MultiProvider(

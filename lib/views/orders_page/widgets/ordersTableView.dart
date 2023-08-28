@@ -20,7 +20,11 @@ class _OrdersTableViewState extends State<OrdersTableView> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            OrdersHeader(),
+            SingleChildScrollView(
+               //if (Responsive.isDesktop(context))
+              scrollDirection: Axis.horizontal,
+              child: OrdersHeader()
+            ),
             SizedBox(height: 20,),
             Responsive.isMobile(context) // Check if the screen is mobile
                         ? SingleChildScrollView(
